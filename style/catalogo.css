@@ -1,0 +1,37 @@
+﻿	* { /* RESET DOS ELEMENTOS */
+  margin: 0; padding: 0;
+ }
+
+ body, html{
+   width: 100%;
+   height: 100%;
+   margin: 0;
+ }
+
+body {
+  background-image: url(../img/bgcatalogo.jpeg);
+}
+
+h1{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+.animacao, .acao, .aventura{
+  width: 100%;
+  height: 200px;
+}
+
+.card-title{
+  color: brown;
+  font-style: italic;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+  text-align: center;
+}

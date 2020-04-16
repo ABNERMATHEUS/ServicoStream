@@ -1,0 +1,26 @@
+/* ESTILO CSS APLICADO PARA TODO O PROJETO */
+
+:root {
+
+    --preto-default: #1e1e1e;
+    --branco-default: #FFF6F2;
+
+    --azul-default: #2574A9;
+    --amarelo-default: #fff;
+    --vermelho-default: #D91E18;
+
+    --roxo-default: #fff;
+    --verde-default: #fff;
+    --laranja-default: #fff;
+
+    --preto-claro: #313131;
+
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel='stylesheet' href='../style/information.css'>
+
+
+
+
+
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="transparent">
+            <div id="nav" class="nav-wrapper black">
+                <a href="# " class="brand-logo center "><img src="../img/logo2.png " class="img animated flip "
+                        id="logo "></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger black "><i
+                        class="material-icons">menu</i></a>
+
+                <ul class="table-of-contents left hide-on-med-and-down ">
+                    <li><a class="white-text " href="sass.html">Filmes</a></li>
+                    <li><a class="white-text" href="badges.html">Séries</a></li>
+                    <li><a class="white-text" href="collapsible.html">Documentario</a></li>
+                    <li><a class="white-text" href="mobile.html">Infantil</a></li>
+                </ul>
+            </div>
+            <!-- <a ref="# " data-target="slide-out " class="sidenav-trigger black "><i class="material-icons ">menu</i></a>-->
+        </nav>
+    </div>
+    <ul class="sidenav white-text" id="mobile-demo">
+        <!-- <li>
+                 <div class=" user-view ">
+                     <div class="background teal ">
+         
+                     </div>
+                     <a href="#user "><img class="circle " src="/img/perfilTeste.jpg "></a>
+                     <a href="#name "><span class="white-text name ">John Doe</span></a>
+                     <a href="#email "><span class="white-text email ">jdandturk@gmail.com</span></a>
+                 </div>
+             </li>-->
+        <li> <button data-target="modal1" class="btn modal-trigger">Entrar</button>
+        </li>
+        <li> <button data-target="modal2" class="btn modal-trigger teal darken-4 ">Registrar-se</button></li>
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+    </ul>
+
+    <div class="row col s12 l12 black">
+        <div id='filme' class="row col s12 l3 left ">
+
+            <img id="img-information" class="col s12 l12 responsive-img animated bounceInUp slow " >
+            
+            <button class="font col s12 l12 blue waves-effect waves-light btn-large animated bounceInUp slow"><i class="material-icons">play_arrow
+            </i> </button>
+
+        </div>
+
+
+        <div class="row col s12 l9 black right">
+            <div class="row col s12 l12 black ">
+                <h2 id='titulo' class="font animated bounceInRight slow"></h2>
+                <div class="col s12 l12 white"></div>
+
+            </div>
+
+            <div class="row col s12 l12 black animated bounceInRight slow">
+
+                <ul class="collection black ">
+                    <li id="descricao" class="collection-item black white-text"></li>
+                    <li class="collection-item black white-text">                        
+
+                            <div class="row col s12 l3 black">
+
+                                <ul>
+                                    <li>Direção</li>
+                                    <div class="divider"></div>
+                                    <li id="direcao"></li>
+
+                                </ul>
+
+                            </div>
+                            <div class="row col s12 l3 black">
+
+                                <ul>
+                                    <li>Elenco</li>
+                                    <div class="divider"></div>
+                                    <li id="atores"></li>
+                                   
+
+                                </ul>
+
+                            </div>
+                            <div class="row col s12 l3 black">
+
+                                <ul>
+                                    <li>Genero</li>
+                                    <div class="divider"></div>
+                                    <li id="genero"></li>
+
+                                </ul>
+
+                            </div>
+                            <div class="row col s12 l3 black">
+                                <ul>
+                                    <li>Ano de Lançamento</li>
+                                    <div class="divider"></div>
+                                    <li id="ano"></li>
+                                    
+
+                                </ul>
+
+                            </div>
+                            <div class="row col s12 l3 black">
+                                <ul>
+                                    <li>Duração</li>
+                                    <div class="divider"></div>
+                                    <li id="duracao"></li>
+
+                                </ul>
+                            </div>
+                    </li>
+
+                    
+                    
+
+                </ul>
+                <button class="font col s12 l12 red waves-effect waves-light btn-large"> Trailer</button>
+
+
+            
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
+    <script src="../script/information.js"></script>
+</body>
+
+</html>

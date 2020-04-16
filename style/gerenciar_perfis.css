@@ -1,0 +1,71 @@
+@import url("style.css");
+
+body {
+    background-color: var(--preto-default);
+}
+
+.gp-titulo {
+    color: var(--branco-default);
+    font-size: 2vw;
+    font-family: Helvetica;
+    margin-bottom: 20px;
+}
+
+#gp-list {
+    display: flex;
+    justify-content: center;
+}
+
+.gp-card {
+    width: 12vw;
+    height: 12vw;
+    margin-right: 10px;
+    background-color: var(--azul-default);
+}
+
+.gp-card .gp-image {
+    height: 100%;
+    margin-bottom: 1vw;
+}
+
+.gp-image:hover {
+    border: 4px solid var(--branco-default);
+    box-sizing: border-box;
+}
+
+.gp-card label {
+    color: var(--branco-default);
+    cursor: pointer;
+    font-size: 1vw;
+    font-family: Helvetica;
+}
+
+.gp-card.add {
+    border: 4px solid var(--preto-claro);
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.gp-card:last-of-type .gp-image:hover {
+    border: none;
+}
+
+.gp-card:last-of-type {
+    margin-right: 0;
+}
+
+.gp-card:last-of-type:hover {
+    border: 4px solid var(--branco-default);
+}
+
+.gp-2rows {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+

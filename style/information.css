@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+nav a img {
+    height: 4vw;
+}
+.table-of-contents a{
+    color: white;
+    font-size: 01.3vw;
+    
+ }
+
+ .navbar-fixed nav {
+    top: 0;
+}
+
+body{
+    margin: 0;
+    background-color: black;
+    
+}
+
+nav .nav-wrapper {
+    
+    
+}
+
+#img-information{
+    margin-top: 50px;
+    
+   
+}
+
+.font{
+   
+font-family: 'Oswald', sans-serif;
+   
+}
+
+
+
+
+
+
+
+
+
+
