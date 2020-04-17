@@ -34,11 +34,10 @@ function  Login(){
     var senhaHash =$.MD5(senha);
     alert(email+senha)
 
+    const json = {email:email,senha:senha}
+
     $.ajax({
-        data:{
-            email: email,
-            senha: senhaHash
-        },
+        data:json,
         dataType:'json',
         type:'GET',
         url: 'http://localhost:3333/user/valida',
