@@ -32,22 +32,19 @@ function  Login(){
     var senha = $("#password").val();
 
     var senhaHash =$.MD5(senha);
+    alert(email+senha)
 
     $.ajax({
         data:{
             email: email,
-            password: senhaHash
+            senha: senhaHash
         },
         dataType:'json',
-        type:'POST',
-        url: '../php/login.php',
+        type:'GET',
+        url: 'http://localhost:3333/user/valida',
         success: function(response){
 
-            if(response.conectou) {
-                window.location.href = 'http://localhost:8888/naovaidarproblema/MOJA/php/'+response.endereco;
-            } else {
-                alert("Errou!");
-            }
+           alert(response.status)
             
         },
         error:function(response){
@@ -56,32 +53,3 @@ function  Login(){
     })
 }
 
-
-
-function Login(){
-    var email =  $("#email").val();
-    var senha =  $("#password").val();
-    //alert(email+senha);
- 
-   // var senhaHash =$.MD5(senha);
- 
-    $.ajax({
-        data:{
-            email:email,
-            senha:senha
-        },
-        type:'POST',
-        url: '../php/login.php',
-        success: function(response){
-            if(response == false){
-                $("#text-login").html('Login ou Senha incorreto !');
-            }
-        },
-        error: function(response){
-             $("#text-login").html('Login ou Senha incorreto!');
-        }
-    });
- 
- 
- 
- };

@@ -55,10 +55,10 @@ module.exports = {
         .andWhere('verificado',0);
 
         if(!idUser){
-            response.json(false);
+            response.json({status:false});
         }else
        
-        response.json(true);
+        response.json({status:true});
     }
 
 
