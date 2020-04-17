@@ -34,10 +34,12 @@ function  Login(){
     var senhaHash =$.MD5(senha);
     alert(email+senha)
 
-    const json = {email:email,senha:senha}
-
+   
     $.ajax({
-        data:json,
+        data:{
+            email:email,
+            senha:senha
+        },
         dataType:'json',
         type:'GET',
         url: 'http://localhost:3333/user/valida',
@@ -47,7 +49,7 @@ function  Login(){
             
         },
         error:function(response){
-            alert("ERROOOO")
+            alert(response.status)
         }
     })
 }

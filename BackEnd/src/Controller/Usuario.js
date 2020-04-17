@@ -47,14 +47,15 @@ module.exports = {
 
 
     async valida (request,response){
-       console.log(request.query)
-        const {email, senha } = request.query;
+      // console.log(request.query)
+        const {email, senha } = request.body;
         
 
        const [idUser] = await  connection('usuario').select('idusuario')
         .where('email',email)
         .andWhere('senha',senha)
         .andWhere('verificado',0);
+        
         
         if(!idUser){
             response.json({status:false});
