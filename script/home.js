@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $('.sidenav').sidenav({
         draggable: true,
-
     });
     $('.carousel').carousel({
         dist: 0,
@@ -9,50 +8,43 @@ $(document).ready(function() {
         fullWidth: true,
         indicators: true,
         duration: 150,
-        
     });
     $('.modal').modal({
         opacity: 0.9
-    }
-        
-    );
+    });
     $('.scrollspy').scrollSpy();
-    
-
-
-    
-    // CAROUSEL
-
-
     autoplay()
     $('.dropdown-trigger').dropdown({
         hover:true,
         constrainWidth: true,
-        
-      
-        
-      
     });
 
-    
-   
+    $.ajax({
+        dataType:'json',
+        type:'GET',
+        url: 'http://localhost:3333/filmesSeries/listar',
+        success: function(response){
 
+            let arrayFilmesSeries = [];
+            arrayFilmesSeries = response.response;
+            
+            arrayFilmesSeries.forEach(function(obj) {
 
-   /* $(document).scroll(function(){
-        var windowTop = $(window).scrollTop();
-        if(windowTop>50){
-            $('#nav').addClass('efect-nav');
+                let cartaz=`<div class="col  s6 l2">
+                                <div class="card-content white-text">
+                                    <a href="/ServicoStream/page/information.html?id=` + obj.idFilmeSerie + `"><img class="responsive-img" src=`+obj.cartaz+`></img></a>
+                                </div>
+                            </div>`;
+
+                $("#listFilmesSeries").append(cartaz);
+
+            });
+            
+        },
+        error:function(response){
+            
         }
-        else{
-            $('#nav').removeClass('efect-nav');
-        }
-    })*/
-   
-    
-
-
-
-
+    });
 
 });
 

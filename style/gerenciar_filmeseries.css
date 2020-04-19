@@ -53,18 +53,23 @@ embed {
     background-color: #ff8c00;
 }
 
-#titulo_input {
-    padding-left: 13px;
-}
-
 #descricao_input,
-#titulo_input {
+#titulo_input,
+#direcao_input,
+#elenco_input,
+#genero_input,
+#ano_input,
+#duracao_input{
+    padding-left: 13px;
     color: #fff;
     border-color: #070c16;
     background-color: #ffffff14;
     border-radius: 4px;
 }
 
+#descricao {
+    width: 101%;
+}
 
 #dados {
     margin: 60px 60px 60px 0;

@@ -14,12 +14,22 @@ module.exports = {
         try {
 
             const data = JSON.stringify(request.body);
-            const {tipo, titulo, descricao, cartaz} = JSON.parse(data);
+            console.log(data);
+            const {tipo, titulo,direcao,
+                elenco,
+                genero,
+                ano_lancamento,
+                duracao, descricao, cartaz} = JSON.parse(data);
             let state = 1;
 
             const registry = await connection('filmeSerie').insert({
                 tipo,
                 titulo,
+                direcao,
+                elenco,
+                genero,
+                ano_lancamento,
+                duracao,
                 descricao,
                 state,
                 cartaz
@@ -49,19 +59,31 @@ module.exports = {
 
         try {
 
-            const data = JSON.stringify(request.body);
-            const {id, filmeSerie } = JSON.parse(data);
+            const data = request.body;
+            const {id, filmeSerie } = JSON.parse(data.data);
+
+
 
             const tipo = filmeSerie.tipo;
             const titulo = filmeSerie.titulo;
+            const direcao = filmeSerie.direcao;
+            const elenco = filmeSerie.elenco;
+            const genero = filmeSerie.genero;
+            const ano_lancamento = filmeSerie.ano_lancamento;
+            const duracao = filmeSerie.duracao;
             const descricao = filmeSerie.descricao;
-            const state = filmeSerie.state;
+            const cartaz = filmeSerie.cartaz;
 
             const registry = await connection('filmeSerie').update({
                 tipo,
                 titulo,
+                direcao,
+                elenco,
+                genero,
+                ano_lancamento,
+                duracao,
                 descricao,
-                state
+                cartaz
             }).where('idFilmeSerie', '=', id);
 
             res.response = await connection('filmeSerie').select().where('idFilmeSerie', '=', registry);
@@ -129,6 +151,28 @@ module.exports = {
 
     },
 
+    async getInfomation (request,response) {
+
+        const res = {status: ""};
+
+        const {idFilmeSerie} = request.query;
+        console.log(request);
+
+        try {
+
+            res.response = await connection('filmeSerie').select().where('idFilmeSerie', '=', idFilmeSerie);
+            res.status = "success";
+            
+        } 
+        catch(e) {
+            console.log('Error: FilmesSeriesController: list: ' + e);
+            res.status = "error";
+        } 
+        finally {
+            response.json(res);
+        }
+
+    },
 
     async getCartaz (request,response) {
 

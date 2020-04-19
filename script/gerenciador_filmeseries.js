@@ -4,6 +4,11 @@ var gerenciar_filmeSeries = {
 
     init: function() {
 
+        const user = sessionStorage.getItem('user');
+        if(user != "root") {
+            location.href = '/ServicoStream/page/home.html';
+        }
+
         $("#btn_adicionar").on('click', function() {
             gerenciar_filmeSeries.adicionar();
         });
@@ -30,12 +35,24 @@ var gerenciar_filmeSeries = {
     adicionar: function() {
 
         let titulo = $('#titulo_input').val();
+        let direcao = $('#direcao_input').val();
+        let elenco = $('#elenco_input').val();
+        let genero = $('#genero_input').val();
+        let ano = $('#ano_input').val();
+        let duracao = $('#duracao_input').val();
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
         let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
         
         let data= {};
         data.tipo = tipo;
+
+        data.direcao = direcao;
+        data.elenco = elenco;
+        data.genero = genero;
+        data.ano = ano;
+        data.duracao = duracao;
+        
         data.titulo = titulo;
         data.descricao = descricao;
         data.cartaz = cartaz;
@@ -59,34 +76,46 @@ var gerenciar_filmeSeries = {
 
     alterar: function() {
 
-        let titulo = $('#titulo_input').val();
         let id = $('#id').val();
+        let titulo = $('#titulo_input').val();
+        let direcao = $('#direcao_input').val();
+        let elenco = $('#elenco_input').val();
+        let genero = $('#genero_input').val();
+        let ano = $('#ano_input').val();
+        let duracao = $('#duracao_input').val();
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
         let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
         
         let data= {};
-        data.id = id; 
+        data.id = id;
         data.filmeSerie = {
             tipo: tipo,
             titulo: titulo,
             descricao: descricao,
-            cartaz: cartaz,
+            direcao: direcao,
+            elenco: elenco,
+            genero: genero,
+            ano_lancamento: ano,
+            duracao: duracao,
+            cartaz: cartaz
         }
 
         $.ajax({
-            data: data,
+            data: {
+                data: JSON.stringify(data)
+            },
             dataType:'json',
             type:'POST',
             url: 'http://localhost:3333/filmesSeries/atualizar',
-            success: function(response){
+            success: function(response) {
                 
                 gerenciar_filmeSeries.listar();
                 gerenciar_filmeSeries.limpar();
                 
             },
             error:function(response){
-                
+                console.log(response);
             }
         });
     },
@@ -139,6 +168,11 @@ var gerenciar_filmeSeries = {
                             <td class="id"         value="` + obj.idFilmeSerie + `" style="display:none"></td>
                             <td class="tipo"       value="` + obj.tipo         + `">` + tipo + `</td>
                             <td class="titulo"     value="` + obj.titulo       + `">` + obj.titulo + `</td>
+                            <td class="direcao"    value="` + obj.direcao       + `">` + obj.direcao + `</td>
+                            <td class="elenco"     value="` + obj.elenco       + `">` + obj.elenco + `</td>
+                            <td class="genero"     value="` + obj.genero       + `">` + obj.genero + `</td>
+                            <td class="ano"        value="` + obj.ano_lancamento       + `">` + obj.ano_lancamento + `</td>
+                            <td class="duracao"    value="` + obj.duracao       + `">` + obj.duracao + `</td>
                             <td class="descricao"  value="` + obj.descricao    + `">` + obj.descricao + `</td>
                             <td class="status"     value="` + obj.status       + `">` + status + `</td>
                             <td style="text-align: center;"><div onclick="gerenciar_filmeSeries.excluir(`+obj.idFilmeSerie+`)" class="btn">Excluir</div></td>
@@ -157,6 +191,11 @@ var gerenciar_filmeSeries = {
     limpar: function() {
         $('#titulo_input').val("");
         $('#tipo_input').val("");
+        $('#direcao_input').val("");
+        $('#elenco_input').val("");
+        $('#genero_input').val("");
+        $('#ano_input').val("");
+        $('#duracao_input').val("");
         $('#descricao_input').val("");
         $("#cartaz_input")[0].style['background-image'] = "";
     },
@@ -164,7 +203,15 @@ var gerenciar_filmeSeries = {
     prepareUpdate: function(elementTr) {
         let id = elementTr.getElementsByClassName('id')[0].getAttribute('value');
         let tipo = elementTr.getElementsByClassName('tipo')[0].getAttribute('value');
+        
         let titulo = elementTr.getElementsByClassName('titulo')[0].getAttribute('value');
+
+        let direcao = elementTr.getElementsByClassName('direcao')[0].getAttribute('value');
+        let elenco = elementTr.getElementsByClassName('elenco')[0].getAttribute('value');
+        let genero = elementTr.getElementsByClassName('genero')[0].getAttribute('value');
+        let ano = elementTr.getElementsByClassName('ano')[0].getAttribute('value');
+        let duracao = elementTr.getElementsByClassName('duracao')[0].getAttribute('value');
+        
         let descricao = elementTr.getElementsByClassName('descricao')[0].getAttribute('value');
         let cartaz = '';
 
@@ -187,6 +234,11 @@ var gerenciar_filmeSeries = {
         }).then(function() {
             $('#id').val(id);
             $('#titulo_input').val(titulo);
+            $('#direcao_input').val(direcao);
+            $('#elenco_input').val(elenco);
+            $('#genero_input').val(genero);
+            $('#ano_input').val(ano);
+            $('#duracao_input').val(duracao);
             $('#tipo_input').val(tipo);
             $('#descricao_input').val(descricao);
             $("#cartaz_input")[0].style['background-image'] = "url("+ cartaz + ")";
