@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Gerenciador de filmes/series</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <script src="../script/gerenciador_filmeseries.js"></script>
+        <link rel='stylesheet' type='text/css' media='screen' href='../style/gerenciar_filmeseries.css'>
+        
+    </head>
+    <body>
+        <iframe src="navbar.html" frameborder="0"></iframe>
+
+        <div id="container" class="row">
+            <div id="cartaz">
+                <div id="cartaz_input" class="file-field input-field">
+                    <div class="btn">
+                      <span>Upload cartaz</span>
+                      <input id="cartaz_base64" type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text" placeholder="Adicione somete um cartaz">
+                    </div>
+                </div>
+            </div> 
+            <div id="dados">
+                <input id="id" type="text" hidden>
+                <div id="titulo">
+                    <input id="titulo_input" type="text" placeholder="A volta dos que não foram">
+                    <select name="" id="tipo_input">
+                        <option value="">--- SELECIONE A CATEGORIA --</option>
+                        <option value="0">Série</option>
+                        <option value="1">Filme</option>
+                    </select>
+                </div>
+                <div id="descricao"><textarea name="" id="descricao_input" cols="30" rows="10"></textarea></div>
+                <div id="acoes">
+                    <button id="btn_adicionar">Adicionar</button>
+                    <button id="btn_alterar">Alterar</button>
+                    <button id="btn_limpar">Limpar</button>
+                </div>
+            </div> 
+        </div>
+
+        <table class="striped" style="width: calc(80% - 120px);margin: 0 auto;margin-bottom: 100px;">
+            <thead>
+              <tr>
+                  <th>Tipo</th>
+                  <th>Titulo</th>
+                  <th>Descrição</th>
+                  <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="listFilmesSeries">
+            </tbody>
+          </table>
+
+    </body>
+</html>
