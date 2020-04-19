@@ -15,7 +15,7 @@
         
     </head>
     <body>
-        <iframe src="navbar.html" frameborder="0"></iframe>
+        <embed src="navbar.html" />
 
         <div id="container" class="row">
             <div id="cartaz">
@@ -32,29 +32,30 @@
             <div id="dados">
                 <input id="id" type="text" hidden>
                 <div id="titulo">
-                    <input id="titulo_input" type="text" placeholder="A volta dos que não foram">
+                    <input id="titulo_input" type="text" placeholder="Titulo do Filme/Serie">
                     <select name="" id="tipo_input">
                         <option value="">--- SELECIONE A CATEGORIA --</option>
                         <option value="0">Série</option>
                         <option value="1">Filme</option>
                     </select>
                 </div>
-                <div id="descricao"><textarea name="" id="descricao_input" cols="30" rows="10"></textarea></div>
+                <div id="descricao"><textarea name="" id="descricao_input" cols="30" rows="10" placeholder="Sinopse do Filme/Serie"></textarea></div>
                 <div id="acoes">
-                    <button id="btn_adicionar">Adicionar</button>
-                    <button id="btn_alterar">Alterar</button>
-                    <button id="btn_limpar">Limpar</button>
+                    <div class="btn" id="btn_adicionar">Adicionar</div>
+                    <duv class="btn" id="btn_alterar">Alterar</div>
+                    <div class="btn" id="btn_limpar">Limpar</div>
                 </div>
             </div> 
         </div>
 
-        <table class="striped" style="width: calc(80% - 120px);margin: 0 auto;margin-bottom: 100px;">
+        <table class="highlight" style="width: calc(100% - 125px);margin: 0 auto;margin-bottom: 100px;background-color: #525560;color: white;">
             <thead>
               <tr>
                   <th>Tipo</th>
                   <th>Titulo</th>
                   <th>Descrição</th>
                   <th>Status</th>
+                  <th></th>
                 </tr>
             </thead>
             <tbody id="listFilmesSeries">

@@ -141,7 +141,7 @@ var gerenciar_filmeSeries = {
                             <td class="titulo"     value="` + obj.titulo       + `">` + obj.titulo + `</td>
                             <td class="descricao"  value="` + obj.descricao    + `">` + obj.descricao + `</td>
                             <td class="status"     value="` + obj.status       + `">` + status + `</td>
-                            <td><div onclick="gerenciar_filmeSeries.excluir(`+obj.idFilmeSerie+`)" class="btn">Excluir</div></td>
+                            <td style="text-align: center;"><div onclick="gerenciar_filmeSeries.excluir(`+obj.idFilmeSerie+`)" class="btn">Excluir</div></td>
                         </tr>`;
                     $('#listFilmesSeries').append(tr);
                 });
@@ -179,7 +179,7 @@ var gerenciar_filmeSeries = {
                 if(response.response)
                     cartaz = response.response[0].cartaz;
                 else 
-                    cartaz = "https://blogmedia.evbstatic.com/wp-content/uploads/engineering/2018/08/09141147/Flexible-Reusable-React-File-Uploader.png";
+                    cartaz = "url(https://pasteboard.co/css/../images/splash-image.png)";
             },
             error:function(response){
                 
