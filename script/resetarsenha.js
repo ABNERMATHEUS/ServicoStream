@@ -13,7 +13,7 @@ function ResetarSenha(){
     
     var token = url.split('token=')[1].replace(',' , '');
 
-    if(senha == ""){
+    if(senha == "" || senha == null){
         $('.erro').html('<span class="erro red-text .center-align animated fadeInUp slow">Os dois campos não devem ser vazio</span>')
     }
 
@@ -22,15 +22,15 @@ function ResetarSenha(){
         $.ajax({
             url:'http://localhost:3333/reset?senha='+senha+'&token='+token , 
             type:'POST',
+            success:function(response){
+                if(response==true){
+                    window.location.href="/ServicoStream/page/resetarsenhaSucesso.html"
+                }else{
+                    $('.erro').html('<span class="erro red-text .center-align animated fadeInUp slow">Por favor entre novamente no email</span>')
+                }
+            }
                         
-        }).done(function(res) {
-            if (res.status) {
-            alert(res.status)
-        } else {
-           alert(res.status)
-        }});
-
-        
+        })
 
     }else{
         $('.erro').html('<span class="erro red-text .center-align animated fadeInUp slow">Os dois campos devem ser iguais</span>')

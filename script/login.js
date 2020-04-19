@@ -33,6 +33,13 @@ function  Login(){
 
     var senhaHash =$.MD5(senha);
     alert(email+senha)
+    
+
+let data= {};
+data.tipo = tipo;
+data.titulo = titulo;
+data.descricao = descricao;
+data.cartaz = cartaz;
 
    
     $.ajax({
