@@ -9,17 +9,18 @@ $(document).ready(function(){
 function EnviarEmail(){
 
     var emailUsuario = $(".email").val();
-    alert(emailUsuario);
     
-    
-
     $.ajax({
         
         type:'POST',
         dataType:'json',
         url: 'http://localhost:3333/recuperacaosenha?email='+emailUsuario,
         success:function(response){
-            alert(response);
+            if(response == true){
+                window.location.href="/ServicoStream/page/senhaSucesso.html"
+            }else{
+                $('.erro').html('<span class="erro red-text .center-align animated fadeInUp slow">E-mail inválido</span>')
+            }
         }
     })
 

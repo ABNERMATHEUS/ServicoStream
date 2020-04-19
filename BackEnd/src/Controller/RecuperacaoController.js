@@ -4,7 +4,7 @@ const nodemailer = require('./Email');
 
 function EnviarEmail(toEmail,cod){
 
-    const url =   'http://127.0.0.1:5500/page/resetarsenha.html?token='+cod;
+    const url =   'http://localhost/ServicoStream/page/resetarsenha.html?token='+cod;
     email = {
         from: "bdflix2020@gmail.com",
         to: toEmail,
@@ -29,10 +29,12 @@ module.exports = {
     async criarToken(request,response){
         const token  = crypto.randomBytes(5).toString('HEX');
         const {email} =  request.query;
-
+        try {
+         
         const [{idusuario}] = await connection('usuario').select('idusuario').where('email','=',email);
-       
-        if (!idusuario){
+        console.log(idusuario)
+
+        if (idusuario== null){
             response.json(false)
         }else{
             
@@ -40,18 +42,33 @@ module.exports = {
             EnviarEmail(email,token);           
             response.json(true);
         }
+
+        } catch (error) {
+            console.log('Error: FilmesSeriesController: create: ' + error);
+            
+            response.json(false)
+        }
+       
+        
     }, 
 
      async resetarSenha (request,response){
         const {senha,token} = request.query;
-        console.log(senha);
-        
-        const bool = await connection('usuario').where('cod','=',token).update({senha:senha});
+       
+        try {
+            const bool = await connection('usuario').where('cod','=',token).update({senha:senha});
         if(bool == 1){
-            response.json({ status: true });
+            response.json(true);
         }else{
-            response.json({ status: false });
+            response.json(false);
         }
+            
+        } catch (error) {
+            console.log("Erro:"+error)
+            response.json(false);
+            
+        }
+        
 
     }
 }
