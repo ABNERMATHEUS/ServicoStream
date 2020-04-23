@@ -6,7 +6,7 @@ $(document).ready(function(){
     $('#button_filme').click(function(){
       
         if(!localStorage.getItem('user')){
-            alert("Não libera")
+            alert("Não liberado")
         }else{
             alert('usuario Liberado')
         }
