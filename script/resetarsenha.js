@@ -17,10 +17,13 @@ function ResetarSenha(){
         $('.erro').html('<span class="erro red-text .center-align animated fadeInUp slow">Os dois campos não devem ser vazio</span>')
     }
 
+    
+
     else if(senha == senhaConfirmar){
+        var senhaHash = $.MD5(senha);
         $('.erro').html('');
         $.ajax({
-            url:'http://localhost:3333/reset?senha='+senha+'&token='+token , 
+            url:'http://localhost:3333/reset?senha='+senhaHash+'&token='+token , 
             type:'POST',
             success:function(response){
                 if(response==true){
