@@ -18,7 +18,7 @@ $(document).ready(function() {
 
         var senhaHash = $.MD5(senha);
 
-        alert(nome+sobrenome+email+senhaHash+confirmasenha);
+        
         fComServidor(nome,sobrenome,email,senhaHash);
        // return false;
 	});
@@ -86,19 +86,28 @@ function Vazio (campo){
 
 function fComServidor(nm,lt_nm,em,pass){
 
+    let data = {}
+    data.nome = nm
+    data.sobrenome = lt_nm
+    data.email = em
+    data.senha = pass
+
 	$.ajax({
-		data: {
-            name: nm,
-            last_name: lt_nm,
-            email:em,
-            password: pass
-		},
-		type: "POST",
-        url: '../php/cadastro.php',
+		data: data,
+        type: "POST",
+        datatype:'json',
+        url: 'http://localhost:3333/user',
         success: function(response){
+            if (response.status != true){
+                alert(reponse.status)
+            }else{
+                alert(response.status)
+
+            }
 
         },
         error: function(response){
+            alert(response.status)
             
         }
 	});

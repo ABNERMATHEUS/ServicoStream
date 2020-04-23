@@ -32,31 +32,35 @@ function  Login(){
     var senha = $("#password").val();
 
     var senhaHash =$.MD5(senha);
-    alert(email+senha)
     
-
-let data= {};
-data.tipo = tipo;
-data.titulo = titulo;
-data.descricao = descricao;
-data.cartaz = cartaz;
+     
+    
+    let data = {}
+    data.email = email
+    data.senha =senhaHash
 
    
     $.ajax({
-        data:{
-            email:email,
-            senha:senha
-        },
+        data: data,
         dataType:'json',
         type:'GET',
         url: 'http://localhost:3333/user/valida',
         success: function(response){
+            if(response.status!= true){
+                $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow">Senha ou e-mail incorretos</center>')
 
-           alert(response.status)
+            }else{
+                $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow"></center>')
+               alert(response.id)
+                localStorage.setItem('user',response.id); //define qual usuario é 
+                //criar um redirecionamento 
+            }
+           
             
         },
         error:function(response){
-            alert(response.status)
+            $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow">Estamos com problemas técnicos, tente mais tarde</center>')
+
         }
     })
 }
