@@ -11,6 +11,7 @@ $(document).ready(function(){
             alert('usuario Liberado')
         }
     });
+    
 });
 
 var information = {

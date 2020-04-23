@@ -14,10 +14,7 @@ $(document).ready(function() {
     });
     $('.scrollspy').scrollSpy();
     autoplay()
-    $('.dropdown-trigger').dropdown({
-        hover:true,
-        constrainWidth: true,
-    });
+   
 
     $.ajax({
         dataType:'json',
