@@ -54,7 +54,10 @@ function  Login(){
                 $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow"></center>')
                
                 localStorage.setItem('user',response.id); //define qual usuario é 
-                location.reload();
+               if(response.id == 1){
+                   window.location.href="http://localhost/ServicoStream/page/gerenciadorDeFilmes.html"
+               }else{
+                location.reload();}
             }
            
             

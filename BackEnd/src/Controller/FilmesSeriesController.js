@@ -14,7 +14,7 @@ module.exports = {
         try {
 
             const data = JSON.stringify(request.body);
-            console.log(data);
+            
             const {tipo, titulo,direcao,
                 elenco,
                 genero,

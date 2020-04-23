@@ -20,7 +20,9 @@ function ResetarSenha(){
     
 
     else if(senha == senhaConfirmar){
-        var senhaHash = $.MD5(senha);
+        
+        let senhaHash = $.MD5(senha);
+
         $('.erro').html('');
         $.ajax({
             url:'http://localhost:3333/reset?senha='+senhaHash+'&token='+token , 

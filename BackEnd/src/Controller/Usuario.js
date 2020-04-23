@@ -79,7 +79,7 @@ module.exports = {
         if(!idUser){
             response.json({status:false});
         }
-        else {
+        else { 
                 response.json({status:true,id:idUser.idusuario})
             }
 

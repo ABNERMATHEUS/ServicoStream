@@ -4,8 +4,8 @@ var gerenciar_filmeSeries = {
 
     init: function() {
 
-        const user = sessionStorage.getItem('user');
-        if(user != "root") {
+        const user = localStorage.getItem('user')
+        if(user != 1) {
             location.href = '/ServicoStream/page/home.html';
         }
 
