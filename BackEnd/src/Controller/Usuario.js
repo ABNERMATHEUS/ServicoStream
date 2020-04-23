@@ -29,24 +29,35 @@ function EnviarEmailVerificao (toEmail,cod){
 module.exports = {
 
     async create (request,response){        
-        const {nome,sobrenome,email,senha} = request.query
+        const {nome,sobrenome,email,senha} = request.body
         const cod = crypto.randomBytes(5).toString('HEX');
-    try {
-            await connection('usuario').insert({
-                nome,
-                sobrenome,
-                email,
-                senha,
-                cod
-            });
+    try {   
+            const [email_cad] = await connection('usuario').select('email').where('email',email)
+            console.log(email_cad)
+            if(email_cad== null){
 
-            //EnviarEmailVerificao(email,cod); //Encaminhar Email para fazer verificação
+                await connection('usuario').insert({
+                    nome,
+                    sobrenome,
+                    email,
+                    senha,
+                    cod
+                });
+    
+                EnviarEmailVerificao(email,cod); //Encaminhar Email para fazer verificação
+    
+                response.json({status:true});
+                
+            }else{
+                response.json({status:false,msg:"Você já tem um conta com este e-mail"})            
 
-            response.json({status:true});
+            }
+            
             
         } catch (error) {
-            response.json({status:false})
-            
+
+            response.json({status:false,msg:"Estamos com problemas técnicos, tente mais tarde"})
+                        
         }
         
     },
@@ -70,6 +81,7 @@ module.exports = {
         else {
                 response.json({status:true,id:idUser.idusuario})
             }
+
     } catch (error) {
 
         response.json({status:false});

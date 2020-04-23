@@ -51,9 +51,9 @@ function  Login(){
 
             }else{
                 $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow"></center>')
-               alert(response.id)
+               
                 localStorage.setItem('user',response.id); //define qual usuario é 
-                //criar um redirecionamento 
+                location.reload();
             }
            
             

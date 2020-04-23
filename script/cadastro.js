@@ -99,16 +99,17 @@ function fComServidor(nm,lt_nm,em,pass){
         url: 'http://localhost:3333/user',
         success: function(response){
             if (response.status != true){
-                alert(reponse.status)
-            }else{
-                alert(response.status)
+               $('.erro_cad').html('<center id="erro" class="erro_cad red-text animated fadeInDown fast">'+response.msg+'</center>')
 
+            }else{
+                window.location.href="http://localhost/ServicoStream/page/cadastroSucesso.html" 
             }
 
         },
         error: function(response){
-            alert(response.status)
-            
+            $('.erro_cad').html('<center id="erro" class="erro_cad red-text animated fadeInDown fast">'+response.msg+'</center>')
+           
         }
-	});
+        
+	   });
 } 

@@ -50,6 +50,8 @@ $(document).ready(function() {
 
 
 
+
+
 function autoplay() {
     $('.carousel').carousel('next');
     setTimeout(autoplay, 4500);
