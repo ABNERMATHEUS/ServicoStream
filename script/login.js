@@ -50,6 +50,7 @@ function  Login(){
                 $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow">Senha ou e-mail incorretos</center>')
 
             }else{
+                
                 $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow"></center>')
                
                 localStorage.setItem('user',response.id); //define qual usuario é 

@@ -31,12 +31,6 @@ $("#sair").click(function(){
 
 
 
-$('.dropdown-trigger').dropdown({
-    hover:true,
-    constrainWidth: true,
-});
-
-
     
     
 })

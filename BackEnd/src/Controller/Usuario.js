@@ -69,6 +69,7 @@ module.exports = {
         
         
     try {
+        
         const [idUser] = await  connection('usuario').select('idusuario')
         .where('email',email)
         .andWhere('senha',senha)
