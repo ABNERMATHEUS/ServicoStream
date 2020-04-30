@@ -11,10 +11,20 @@ $(document).ready(function(){
             alert('usuario Liberado')
         }
     });
+
+    $('.favorite').click(function() {
+        information.favorite()
+    });
     
 });
 
 var information = {
+
+    favorite: function(){
+
+        $('.favorite').html('<i class="favorite medium material-icons white-text right">favorite</i>');
+        
+    },
 
     listar: function() {
 
