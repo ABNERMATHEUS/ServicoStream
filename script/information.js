@@ -12,18 +12,43 @@ $(document).ready(function(){
         }
     });
 
-    $('.favorite').click(function() {
+
+    $('#favorite').click(function() {
         information.favorite()
     });
+
+
+    
     
 });
+var favorite = false;
+var url = window.location.search.replace("?","");
+var idFilme = url.split('id=')[1].replace(",","");
+var idUser= localStorage.getItem('user');
+var data = {}
+data.idFilme = idFilme;
+data.idUser = idUser;
+/* Usar o data, já ésta como json, isso colocar no ajax*/
 
 var information = {
 
+    
     favorite: function(){
 
-        $('.favorite').html('<i class="favorite medium material-icons white-text right">favorite</i>');
+
+
+        if(favorite == false){
         
+        $('#favorite').html('<i class="favorite medium material-icons red-text right">favorite</i>');
+         favorite = true
+         console.log(data);       
+         
+        }
+        else{        
+        $('#favorite').html('<i class="favorite medium material-icons white-text right">favorite_border</i>');
+         favorite = false;
+         console.log(data);
+    }
     },
 
     listar: function() {
