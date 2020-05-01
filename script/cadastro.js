@@ -15,11 +15,13 @@ $(document).ready(function() {
         var email = $("#email2").val();
         var senha = $("#password2_2").val();
         var confirmasenha = $("#password2Confirm").val();
+        var telefone = $("#telefone").val();
+        var nascimento = $("#nascimento").val();
 
         var senhaHash = $.MD5(senha);
 
         
-        fComServidor(nome,sobrenome,email,senhaHash);
+        fComServidor(nome,sobrenome,email,senhaHash, telefone, nascimento);
        // return false;
 	});
 
@@ -84,13 +86,15 @@ function Vazio (campo){
 
 
 
-function fComServidor(nm,lt_nm,em,pass){
+function fComServidor(nm,lt_nm,em,pass, telefone, nascimento){
 
     let data = {}
     data.nome = nm
     data.sobrenome = lt_nm
     data.email = em
     data.senha = pass
+    data.telefone = telefone
+    data.nascimento = nascimento
 
 	$.ajax({
 		data: data,

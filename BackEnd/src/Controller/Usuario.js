@@ -29,8 +29,9 @@ function EnviarEmailVerificao (toEmail,cod){
 module.exports = {
 
     async create (request,response){        
-        const {nome,sobrenome,email,senha} = request.body
+        const {nome,sobrenome,email,senha, telefone, nascimento} = request.body
         const cod = crypto.randomBytes(5).toString('HEX');
+        const status = 1;
     try {   
             const [email_cad] = await connection('usuario').select('email').where('email',email)
             console.log(email_cad)
@@ -41,7 +42,10 @@ module.exports = {
                     sobrenome,
                     email,
                     senha,
-                    cod
+                    cod,
+                    telefone,
+                    nascimento,
+                    status
                 });
     
                 EnviarEmailVerificao(email,cod); //Encaminhar Email para fazer verificação
