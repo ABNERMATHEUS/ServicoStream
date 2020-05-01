@@ -33,12 +33,24 @@ font-family: 'Oswald', sans-serif;
    
 }
 
+.font:hover{
+    filter: brightness(85%);
+}
+
 #favorite{
 
     margin-top: 35px;
     cursor: pointer;
 
 }
+
+
+#favorite i:hover{
+
+    color: red!important;
+
+}
+
 
 
 
