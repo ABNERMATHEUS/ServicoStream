@@ -12,6 +12,10 @@ $(document).ready(function(){
         }
     });
 
+    if(localStorage.getItem('user')!=null){
+        $('#favorite').append(`<i class="medium material-icons white-text right">favorite_border</i>`);
+    }
+
 
     $('#favorite').click(function() {
         information.favorite()
