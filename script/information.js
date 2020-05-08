@@ -39,19 +39,53 @@ var information = {
     
     favorite: function(){
 
-
+        const user = localStorage.getItem('user');
+        const idFilme = location.search.replace(/[?/id=]/g, '');
 
         if(favorite == false){
         
-        $('#favorite').html('<i class="favorite medium material-icons red-text right">favorite</i>');
-         favorite = true
-         console.log(data);       
+            $('#favorite').html('<i class="favorite medium material-icons red-text right">favorite</i>');
+            favorite = true
+            console.log(data);       
+
+            $.ajax({
+                dataType:'json',
+                data: {
+                    idUsuario: user,
+                    idFilmeSerie: idFilme
+                },
+                type:'POST',
+                url: 'http://localhost:3333/filmesSeries/addFavorito',
+                success: function(response){
+    
+                },
+                error:function(response){
+                    
+                }
+            });
          
         }
         else{        
         $('#favorite').html('<i class="favorite medium material-icons white-text right">favorite_border</i>');
          favorite = false;
          console.log(data);
+
+         $.ajax({
+            dataType:'json',
+            data: {
+                idUsuario: user,
+                idFilmeSerie: idFilme
+            },
+            type:'POST',
+            url: 'http://localhost:3333/filmesSeries/removeFavorito',
+            success: function(response){
+
+            },
+            error:function(response){
+                
+            }
+        });
+
     }
     },
 
