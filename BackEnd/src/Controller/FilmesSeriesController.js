@@ -134,10 +134,21 @@ module.exports = {
     async list (request,response) {
 
         const res = {status: ""};
+        const query = {state: 1};
+
+        const {usuario, filtrarFavoritos} = request.query;
+
+        if(usuario)
+            query.state = usuario;
 
         try {
 
-            res.response = await connection('filmeSerie').select().where('state', '=', 1);
+            if(filtrarFavoritos) {
+                res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeSerie.idFilmeSerie').select().where(query);
+            } else {
+                res.response = await connection('filmeSerie').select().where(query);
+            }
+
             res.status = "success";
             
         } 
@@ -187,6 +198,68 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: list: ' + e);
+            res.status = "error";
+        } 
+        finally {
+            response.json(res);
+        }
+
+    },
+
+    async addFavorito (request,response) {
+
+        const res = {
+            status: "",
+            response: ""
+        };
+
+        try {
+
+            const data = JSON.stringify(request.body);
+            
+            const {idUsuario, idFilmeSerie} = JSON.parse(data);
+
+            const registry = await connection('favoritos').insert({
+                idUsuario,
+                idFilmeSerie
+            });
+
+            res.status = "success";
+
+        } 
+        catch(e) {
+            console.log('Error: FilmesSeriesController: create: ' + e);
+            res.status = "error";
+        } 
+        finally {
+            response.json(res);
+        }
+
+    },
+
+    async removeFavorito (request,response) {
+
+        const res = {
+            status: "",
+            response: ""
+        };
+
+        try {
+
+            const data = JSON.stringify(request.body);
+            
+            const {idUsuario, idFilmeSerie} = JSON.parse(data);
+
+            const registry = await connection('favoritos').where({
+                idUsuario,
+                idFilmeSerie
+            }).del();
+
+            res.status = "success";
+
+        } 
+        catch(e) {
+            console.log('Error: FilmesSeriesController: removeFavorito: ' + e);
             res.status = "error";
         } 
         finally {

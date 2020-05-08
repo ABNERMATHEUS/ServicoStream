@@ -18,6 +18,10 @@ Routes.post('/reset',RecuperacaoController.resetarSenha);
 Routes.post('/filmesSeries/inserir',FilmesSeriesController.create);
 Routes.post('/filmesSeries/atualizar',FilmesSeriesController.update);
 Routes.post('/filmesSeries/excluir',FilmesSeriesController.exclude);
+
+Routes.post('/filmesSeries/addFavorito',FilmesSeriesController.addFavorito);
+Routes.post('/filmesSeries/removeFavorito',FilmesSeriesController.removeFavorito);
+
 Routes.get('/filmesSeries/listar',FilmesSeriesController.list);
 Routes.get('/filmesSeries/getImg',FilmesSeriesController.getCartaz);
 Routes.get('/filmesSeries/information',FilmesSeriesController.getInfomation);

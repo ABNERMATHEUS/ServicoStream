@@ -1,0 +1,48 @@
+body {
+	margin: 0;
+}
+#container {
+	width: 80%;
+	height: 93.4vh;
+	margin: 20px auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.cartaz {
+	width: 17rem;
+	margin: 20px;
+	height: 25rem;
+	transition: .3s;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.cartaz:hover {
+	transform: scale(1.03);
+}
+.cartaz-descricao {
+	height: 100%;
+	opacity: 0;
+	transition: .3s;
+	padding-top: 63%;
+	padding-left: 100px;
+	background-color: #150c09b8;
+}
+.cartaz-descricao:hover {
+	opacity: 1;
+}
+.icon-play {
+	color: white;
+	width: 100px;
+	border: 1px solid white;
+	height: 50px;
+	bottom: 0px;
+	cursor: pointer;
+	display: inline;
+	font-size: 60px;
+	text-align: center;
+	align-self: center;
+	justify-items: center;
+	border-radius: 3px;
+	justify-content: center;
+	background-color: #07397c;
+}
