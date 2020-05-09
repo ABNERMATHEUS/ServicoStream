@@ -7,8 +7,8 @@ if(!localStorage.getItem('user')){
 }else{
     $('#nav').append(` <a class='transparent dropdown-trigger btn right' href='#' data-target='dropdown1'><i class="teal-text material-icons">list</i></a>
     <ul id='dropdown1' class='black dropdown-content'>
-    <li><a href="#!"><i class="material-icons">account_circle</i>Perfil</a></a></li>
-    <li><a href="favoritos.html"><i class="material-icons">account_circle</i>Perfil</a></a></li>
+    <li><a href="gerenciadorDeFilmes.html"><i class="material-icons">account_circle</i>Perfil</a></a></li>
+    <li><a href="favoritos.html"><i class="material-icons">favorite</i>Favoritos</a></a></li>
     <li><a id="sair"><i class="material-icons">exit_to_app</i>Sair</a></li>
   </ul>   `)
 
