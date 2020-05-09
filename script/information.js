@@ -120,6 +120,32 @@ var information = {
                     $("#atores").html("  <li id='atores'>"+"• "+ obj.elenco+"</li>");
 
                 });
+
+                $('#favorite').html('<i class="favorite medium material-icons white-text right">favorite_border</i>');
+
+                const user = localStorage.getItem('user');
+
+                $.ajax({
+                    data: {
+                        usuario: user,
+                        filtrarFavoritos: true
+                    },
+                    dataType:'json',
+                    type:'GET',
+                    url: 'http://localhost:3333/filmesSeries/listar',
+                    success: function(response){
+                        if(response.response) {
+                            response.response.forEach(function(value) {
+                                if(value.idFilmeSerie == idFilmeSerie) {
+                                    $('#favorite').html('<i class="favorite medium material-icons red-text right">favorite</i>');
+                                    favorite = true;
+                                }
+                            });
+                        }
+                    },
+                    error: function(responseError) {
+
+                    }});
                 
             },
             error:function(response){
