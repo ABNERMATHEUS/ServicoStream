@@ -10,7 +10,7 @@ if(!localStorage.getItem('user')){
     <li><a href="gerenciadorDeFilmes.html"><i class="material-icons">account_circle</i>Perfil</a></a></li>
     <li><a href="favoritos.html"><i class="material-icons">favorite</i>Favoritos</a></a></li>
     <li><a id="sair"><i class="material-icons">exit_to_app</i>Sair</a></li>
-  </ul>   `)
+  </ul>`)
 
   $('#mobile-demo').append(`
   <li> <button data-target="modal1" class="btn modal-trigger">Entrar</button>

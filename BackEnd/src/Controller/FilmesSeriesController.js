@@ -134,17 +134,22 @@ module.exports = {
     async list (request,response) {
 
         const res = {status: ""};
-        const query = {state: 1};
+        const query = {idUsuario: 1};
 
         const {usuario, filtrarFavoritos} = request.query;
 
         if(usuario)
-            query.state = usuario;
+            query.idUsuario = usuario;
 
         try {
 
             if(filtrarFavoritos) {
-                res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeSerie.idFilmeSerie').select().where(query);
+
+                //res.response = await connection().select('*').from('favoritos','filmeserie').where('idusuario','=',usuario)
+             
+                res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeserie.idFilmeSerie').select().where(query);
+                console.log(query)
+            
             } else {
                 res.response = await connection('filmeSerie').select().where(query);
             }
