@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Adicionados recentemente</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <link rel="stylesheet" href="../style/home.css" />
+        <script type="text/javascript" src="../script/jquery-3.3.1.js"></script>
+        <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
+        <script src="../script/jquery.md5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
+        <script src="../script/navbar.js"></script>
+        <script src="../script/adicionados_recentemente.js"></script>
+        <script src="../script/login.js"></script>
+        <script src="../script/cadastro.js"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="transparent">
+                <div id="nav" class="nav-wrapper black">
+                    <a href="# " class="brand-logo center">
+                        <img src="../img/logo2.png" class="img animated flip" id="logo " style="width: 60px;" />
+                    </a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger black">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="table-of-contents left hide-on-med-and-down">
+                        <li>
+                            <a class="white-text" href="../home.html">Filmes</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="../home.html">Séries</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="../home.html">Documentario</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="../home.html">Infantil</a>
+                        </li>
+                        <li><a class="white-text" href="adicionados_recentemente.html">Adicionados recentemente</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <ul class="sidenav white-text" id="mobile-demo"></ul>
+        <div id="modal1" class="modal transparent">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat right">
+                <i class="material-icons white-text">close</i>
+            </a>
+            <div class="modal-content">
+                <div class="col s12 z-depth-6 card-panel transparent" id="login">
+                    <center id="erro" class="erro red-text animated fadeInDown delay-2s"></center>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix white-text">mail_outline</i>
+                            <input class="white-text" id="email" type="email" />
+                            <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix white-text">lock_outline</i>
+                            <input id="password" type="password" class="input white-text" />
+                            <label for="password">Password</label>
+                            <a class="senha teal-text right" href="/ServicoStream/page/senha.html">Esqueceu sua senha?</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light col s12" id="botao" disabled="false">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal2" class="modal transparent">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat right">
+                <i class="material-icons white-text">close</i>
+            </a>
+            <div class="modal-content">
+                <div class="col s12 z-depth-6 card-panel transparent" id="login">
+                    <center id="erro" class="erro_cad red-text animated fadeInDown delay-2s"></center>
+                    <div class="row">
+                        <div class="input-field col l6 s12">
+                            <i class="material-icons prefix white-text">account_circle</i>
+                            <input class="validate white-text" name="name2" id="name2" type="text" />
+                            <label for="name" data-error="wrong" data-success="right">Nome</label>
+                        </div>
+                        <div class="input-field col l6 s12">
+                            <i class="material-icons prefix white-text">account_circle</i>
+                            <input class="validate white-text" name="last_name2" id="last_name2" type="text" />
+                            <label for="last_name" data-error="wrong" data-success="right">Sobrenome</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col l6 s12">
+                            <i class="material-icons prefix white-text">contact_phone</i>
+                            <input class="validate white-text" name="telefone" id="telefone" type="text" />
+                            <label for="name" data-error="wrong" data-success="right">Telefone</label>
+                        </div>
+                        <div class="input-field col l6 s12">
+                            <i class="material-icons prefix white-text">date_range</i>
+                            <input class="validate white-text datepicker" name="nascimento" id="nascimento" type="text" />
+                            <label for="last_name" data-error="wrong" data-success="right">Nascimento</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix white-text">mail_outline</i>
+                            <input class="validate white-text" name="email2" id="email2" type="email" />
+                            <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col l6 s12">
+                            <i class="material-icons prefix white-text">lock_outline</i>
+                            <input name="password2_2" id="password2_2" type="password" class="validate white-text" />
+                            <label for="password">Senha</label>
+                        </div>
+                        <div class="input-field col l6 s12">
+                            <i class="material-icons prefix white-text">lock_outline</i>
+                            <input id="password2Confirm" type="password" class="a white-text" />
+                            <label for="password">Confirmar senha</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light col s12" id="botaoCadastro" disabled="false">Registrar-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="black">
+            <div class="carousel carousel-slider" data-indicators="true">
+                <div class="carousel-item black white-text" href="#one!">
+                    <img src="../img/carrosel/1.jpg" alt="">
+                </div>
+                <div class="carousel-item black white-text" href="#two!">
+                    <img src="../img/carrosel/2.jpg" />
+                </div>
+                <div class="carousel-item black white-text" href="#three!">
+                    <img src="../img/carrosel/3.jpg" />
+                </div>
+                <div class="carousel-item black white-text" href="#four!">
+                    <img src="../img/carrosel/4.jpg" />
+                </div>
+            </div>
+        </section>
+        <div class="catalogo row black" id="listFilmesSeries"></div>
+    </body>
+</html>
