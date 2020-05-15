@@ -1,5 +1,6 @@
 const connection = require('../database/connection');
 const crypto  = require('crypto');
+const knex = require("knex");
 
 
 module.exports = {
@@ -265,6 +266,31 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: removeFavorito: ' + e);
+            res.status = "error";
+        } 
+        finally {
+            response.json(res);
+        }
+
+    },
+
+    async listarAdicionadosRecentemente(request, response) {
+
+        const res = {status: ""};
+        const query = {state: 1};
+
+        const {usuario, filtrarFavoritos} = request.query;
+
+        const t = 'NOW() - INTERVAL 1 MONTH;';
+
+        try {
+
+            res.response = await connection('filmeSerie').select().where(query).andWhere('created_on', '>=', knex.raw(t));
+            res.status = "success";
+            
+        } 
+        catch(e) {
+            console.log('Error: FilmesSeriesController: listarAdicionadosRecentemente: ' + e);
             res.status = "error";
         } 
         finally {
