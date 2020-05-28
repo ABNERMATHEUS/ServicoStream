@@ -135,19 +135,37 @@ module.exports = {
     async list (request,response) {
 
         const res = {status: ""};
-        const query = {state: 1};
+        let query = {state: 1};
 
-        const {usuario, filtrarFavoritos} = request.query;
+        const {usuario, filtrarFavoritos, paramQuery} = request.query;
 
         if(usuario)
             query.idUsuario = usuario;
+
+
+        let queryRaw = "1 > 0";
+        if(paramQuery) {
+            if(paramQuery.titulo) {
+                queryRaw += " and titulo like '%" + paramQuery.titulo + "%'";
+            }
+
+            if(paramQuery.genero) {
+                queryRaw += " and genero like '%" + paramQuery.genero + "%'";
+            }
+            
+            if(paramQuery.ano) {
+                queryRaw += " and ano_lancamento = " + paramQuery.ano;
+            }
+            
+        }
+            
 
         try {
 
             if(filtrarFavoritos) {
                 res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeSerie.idFilmeSerie').select().where(query);
             } else {
-                res.response = await connection('filmeSerie').select().where(query);
+                res.response = await connection('filmeSerie').select().where(query).whereRaw(queryRaw);
             }
 
             res.status = "success";
