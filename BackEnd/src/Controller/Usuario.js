@@ -35,7 +35,7 @@ module.exports = {
         const status = 1;
     try {   
             const [email_cad] = await connection('usuario').select('email').where('email',email)
-            console.log(email_cad)
+       
             if(email_cad== null){
 
                 await connection('usuario').insert({

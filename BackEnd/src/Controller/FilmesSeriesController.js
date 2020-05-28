@@ -144,7 +144,7 @@ module.exports = {
             query.idUsuario = usuario;
 
         try {
-
+            
             if(filtrarFavoritos) {
 
                 //res.response = await connection().select('*').from('favoritos','filmeserie').where('idusuario','=',usuario)

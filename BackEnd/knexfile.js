@@ -15,12 +15,14 @@ module.exports = {
 
   
 
-  staging: {
+  production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host:  /*process.env.HOST_NAME ||*/ 'ec2-34-200-72-77.compute-1.amazonaws.com', 
+      database: /*process.env.DATA_BASE ||*/ 'dfpavul55fich8',
+      user:     /*process.env.USER ||*/ 'gskhdkkijhfrlh' ,
+      port: 5432,
+      password: /*process.env.PASSWORD ||*/ '979793cd1ce9b2441fac38bedbed2357c720c8758b6695ae350b9c5d77e7e0aa'
     },
     pool: {
       min: 2,
@@ -31,11 +33,11 @@ module.exports = {
     }
   },
 
-  production: {
+  staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
+      database: 'a',
+      user:   'aa'  ,
       password: 'password'
     },
     pool: {
