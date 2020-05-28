@@ -1,4 +1,13 @@
 $(document).ready(function() {
+
+    jQuery.extend({
+
+        getQueryParameters : function(str) {
+            return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+        }
+    
+    });
+    
     $('.sidenav').sidenav({
         draggable: true,
     });
@@ -15,9 +24,14 @@ $(document).ready(function() {
     $('.scrollspy').scrollSpy();
     autoplay()
    
+    let paramQuery = $.getQueryParameters();
+    delete paramQuery[""];
 
     $.ajax({
         dataType:'json',
+        data: {
+            paramQuery: paramQuery
+        },
         type:'GET',
         url: 'http://localhost:3333/filmesSeries/listar',
         success: function(response){
