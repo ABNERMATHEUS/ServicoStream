@@ -1,6 +1,7 @@
 const connection = require('../database/connection');
 const nodemailer = require('./Email');
 const crypto  = require('crypto');
+const jwt = require('jsonwebtoken');
 
 
 function EnviarEmailVerificao (toEmail,cod){
@@ -69,7 +70,7 @@ module.exports = {
 
     async valida (request,response){
         
-        const {email, senha } = request.query;
+        const {email, senha } = request.query;       
         
         
     try {
@@ -83,8 +84,11 @@ module.exports = {
         if(!idUser){
             response.json({status:false});
         }
-        else { 
-                response.json({status:true,id:idUser.idusuario})
+        else {   
+
+              const token = jwt.sign({id:idUser.idusuario},'chaveprivada',{expiresIn: 86400 }); //Criando token / tempo 24hrs:86400;
+              response.json({status:true,id:token});
+                
             }
 
     } catch (error) {

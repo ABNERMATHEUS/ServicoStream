@@ -1,6 +1,7 @@
 const connection = require('../database/connection');
 const crypto  = require('crypto');
 const knex = require("knex");
+const jwt = require('jsonwebtoken');
 
 
 module.exports = {
@@ -88,11 +89,11 @@ module.exports = {
             }).where('idFilmeSerie', '=', id);
 
             res.response = await connection('filmeSerie').select().where('idFilmeSerie', '=', registry);
-            res.status = "success";
+            res.status = "success";     
 
         } 
         catch(e) {
-            console.log('Error: FilmesSeriesController: update: ' + e);
+            console.log('Error: FilmesSeriesController: update: ' + e); 
             res.status = "error";
         } 
         finally {
@@ -163,7 +164,12 @@ module.exports = {
         try {
 
             if(filtrarFavoritos) {
-                res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeSerie.idFilmeSerie').select().where(query);
+
+                //res.response = await connection().select('*').from('favoritos','filmeserie').where('idusuario','=',usuario)
+             
+                res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeserie.idFilmeSerie').select().where(query);
+                console.log(query)
+            
             } else {
                 res.response = await connection('filmeSerie').select().where(query).whereRaw(queryRaw);
             }
@@ -237,6 +243,9 @@ module.exports = {
             const data = JSON.stringify(request.body);
             
             const {idUsuario, idFilmeSerie} = JSON.parse(data);
+            idUsuario = {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            
+
 
             const registry = await connection('favoritos').insert({
                 idUsuario,
@@ -268,6 +277,7 @@ module.exports = {
             const data = JSON.stringify(request.body);
             
             const {idUsuario, idFilmeSerie} = JSON.parse(data);
+            idUsuario = {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
 
             const registry = await connection('favoritos').where({
                 idUsuario,
@@ -293,7 +303,7 @@ module.exports = {
         const query = {state: 1};
 
         const {usuario, filtrarFavoritos} = request.query;
-
+        usuario = {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
         const t = 'NOW() - INTERVAL 1 MONTH;';
 
         try {
