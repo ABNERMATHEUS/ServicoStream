@@ -20,8 +20,7 @@ module.exports = {
     connection: {
       host:  /*process.env.HOST_NAME ||*/ 'ec2-34-200-72-77.compute-1.amazonaws.com', 
       database: /*process.env.DATA_BASE ||*/ 'dfpavul55fich8',
-      user:     /*process.env.USER ||*/ 'gskhdkkijhfrlh' ,
-      port: 5432,
+      user:     'gskhdkkijhfrlh' ,
       password: /*process.env.PASSWORD ||*/ '979793cd1ce9b2441fac38bedbed2357c720c8758b6695ae350b9c5d77e7e0aa'
     },
     pool: {
