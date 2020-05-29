@@ -302,13 +302,15 @@ module.exports = {
         const res = {status: ""};
         const query = {state: 1};
 
-        const {usuario, filtrarFavoritos} = request.query;
-        usuario = {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
-        const t = 'NOW() - INTERVAL 1 MONTH;';
-
+      
         try {
 
-            res.response = await connection('filmeSerie').select().where(query).andWhere('created_on', '>=', knex.raw(t));
+            const {usuario, filtrarFavoritos} = request.query;
+            usuario = {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            const t = 'NOW() - INTERVAL 1 MONTH;';
+    
+
+            res.response = await connection('filmeserie').select().where(query).andWhere('created_on', '>=', knex.raw(t));
             res.status = "success";
             
         } 
