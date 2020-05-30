@@ -23,7 +23,7 @@ module.exports = {
       user:     process.env.USER || 'gskhdkkijhfrlh' ,
       password: process.env.PASSWORD || '979793cd1ce9b2441fac38bedbed2357c720c8758b6695ae350b9c5d77e7e0aa',
       searchPath: ['knex', 'public'],
-      ssl: false,
+      
       port: 5432
     },
     pool: {
