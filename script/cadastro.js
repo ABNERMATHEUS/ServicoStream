@@ -100,7 +100,7 @@ function fComServidor(nm,lt_nm,em,pass, telefone, nascimento){
 		data: data,
         type: "POST",
         datatype:'json',
-        url: 'http://localhost:3333/user',
+        url: 'https://mojal.herokuapp.com/user',
         success: function(response){
             if (response.status != true){
                $('.erro_cad').html('<center id="erro" class="erro_cad red-text animated fadeInDown fast">'+response.msg+'</center>')
