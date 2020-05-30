@@ -106,7 +106,7 @@ function fComServidor(nm,lt_nm,em,pass, telefone, nascimento){
                $('.erro_cad').html('<center id="erro" class="erro_cad red-text animated fadeInDown fast">'+response.msg+'</center>')
 
             }else{
-                window.location.href="http://localhost/ServicoStream/page/cadastroSucesso.html" 
+                window.location.href="https://mojal.herokuapp.com/page/cadastroSucesso.html" 
             }
 
         },

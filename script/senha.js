@@ -14,7 +14,7 @@ function EnviarEmail(){
         
         type:'POST',
         dataType:'json',
-        url: 'http://localhost:3333/recuperacaosenha?email='+emailUsuario,
+        url: 'https://mojal.herokuapp.com/recuperacaosenha?email='+emailUsuario,
         success:function(response){
             if(response == true){
                 window.location.href="/ServicoStream/page/senhaSucesso.html"

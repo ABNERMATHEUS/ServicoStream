@@ -46,7 +46,7 @@ function  Login(){
         data: data,
         dataType:'json',
         type:'GET',
-        url: 'http://localhost:3333/user/valida',
+        url: 'https://mojal.herokuapp.com/user/valida',
         success: function(response){
             if(response.status!= true){
                 $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow">Senha ou e-mail incorretos</center>')

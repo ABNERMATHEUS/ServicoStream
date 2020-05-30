@@ -33,7 +33,7 @@ $(document).ready(function() {
             paramQuery: paramQuery
         },
         type:'GET',
-        url: 'http://localhost:3333/filmesSeries/listar',
+        url: 'https://mojal.herokuapp.com/filmesSeries/listar',
         success: function(response){
 
             let arrayFilmesSeries = [];

@@ -55,7 +55,7 @@ var information = {
                     idFilmeSerie: idFilme
                 },
                 type:'POST',
-                url: 'http://localhost:3333/filmesSeries/addFavorito',
+                url: 'https://mojal.herokuapp.com/filmesSeries/addFavorito',
                 success: function(response){
     
                 },
@@ -77,7 +77,7 @@ var information = {
                 idFilmeSerie: idFilme
             },
             type:'POST',
-            url: 'http://localhost:3333/filmesSeries/removeFavorito',
+            url: 'https://mojal.herokuapp.com/filmesSeries/removeFavorito',
             success: function(response){
 
             },
@@ -99,7 +99,7 @@ var information = {
             },
             dataType:'json',
             type:'GET',
-            url: 'http://localhost:3333/filmesSeries/information',
+            url: 'https://mojal.herokuapp.com/filmesSeries/information',
             success: function(response){
     
                 let arrayFilmesSeries = [];
@@ -132,7 +132,7 @@ var information = {
                     },
                     dataType:'json',
                     type:'GET',
-                    url: 'http://localhost:3333/filmesSeries/listar',
+                    url: 'https://mojal.herokuapp.com/filmesSeries/listar',
                     success: function(response){
                         if(response.response) {
                             response.response.forEach(function(value) {

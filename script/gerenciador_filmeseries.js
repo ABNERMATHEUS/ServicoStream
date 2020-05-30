@@ -61,7 +61,7 @@ var gerenciar_filmeSeries = {
             data: data,
             dataType:'json',
             type:'POST',
-            url: 'http://localhost:3333/filmesSeries/inserir',
+            url: 'https://mojal.herokuapp.com/filmesSeries/inserir',
             success: function(response){
                 
                 gerenciar_filmeSeries.listar();
@@ -107,7 +107,7 @@ var gerenciar_filmeSeries = {
             },
             dataType:'json',
             type:'POST',
-            url: 'http://localhost:3333/filmesSeries/atualizar',
+            url: 'https://mojal.herokuapp.com/filmesSeries/atualizar',
             success: function(response) {
                 
                 gerenciar_filmeSeries.listar();
@@ -129,7 +129,7 @@ var gerenciar_filmeSeries = {
                 },
                 dataType:'json',
                 type:'POST',
-                url: 'http://localhost:3333/filmesSeries/excluir',
+                url: 'https://mojal.herokuapp.com/filmesSeries/excluir',
                 success: function(response){
                     
                     gerenciar_filmeSeries.listar();
@@ -150,7 +150,7 @@ var gerenciar_filmeSeries = {
         $.ajax({
             dataType:'json',
             type:'GET',
-            url: 'http://localhost:3333/filmesSeries/listar',
+            url: 'https://mojal.herokuapp.com/filmesSeries/listar',
             success: function(response){
     
                 let arrayFilmesSeries = [];
@@ -221,7 +221,7 @@ var gerenciar_filmeSeries = {
             },
             dataType:'json',
             type:'GET',
-            url: 'http://localhost:3333/filmesSeries/getImg',
+            url: 'https://mojal.herokuapp.com/filmesSeries/getImg',
             success: function(response){
                 if(response.response)
                     cartaz = response.response[0].cartaz;

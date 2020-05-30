@@ -25,11 +25,11 @@ function ResetarSenha(){
 
         $('.erro').html('');
         $.ajax({
-            url:'http://localhost:3333/reset?senha='+senhaHash+'&token='+token , 
+            url:'https://mojal.herokuapp.com/reset?senha='+senhaHash+'&token='+token , 
             type:'POST',
             success:function(response){
                 if(response==true){
-                    window.location.href="/ServicoStream/page/resetarsenhaSucesso.html"
+                    window.location.href="https://mojal.herokuapp.com/page/resetarsenhaSucesso.html"
                 }else{
                     $('.erro').html('<span class="erro red-text .center-align animated fadeInUp slow">Por favor entre novamente no email</span>')
                 }

@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 
 function EnviarEmailVerificao (toEmail,cod){
-    const url = 'http://localhost:3333/valida?cod='+cod
+    const url = 'https://mojal.herokuapp.com/valida?cod='+cod
         
     email = {
         from: "bdflix2020@gmail.com",

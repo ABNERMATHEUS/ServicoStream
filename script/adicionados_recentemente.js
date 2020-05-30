@@ -19,7 +19,7 @@ $(document).ready(function() {
     $.ajax({
         dataType:'json',
         type:'GET',
-        url: 'http://localhost:3333/adicionadosRecentemente/listar',
+        url: 'https://mojal.herokuapp.com/adicionadosRecentemente/listar',
         success: function(response){
 
             let arrayFilmesSeries = [];
