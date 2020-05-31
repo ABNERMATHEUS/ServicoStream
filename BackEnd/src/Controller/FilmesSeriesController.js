@@ -243,9 +243,9 @@ module.exports = {
 
             const data = JSON.stringify(request.body);
             
-            const {idUsuario, idFilmeSerie} = JSON.parse(data);
-            const {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
-            idUsuario = id;
+            const {usuario, idFilmeSerie} = JSON.parse(data);
+            const {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            const idUsuario = id;
             
 
 
@@ -258,7 +258,7 @@ module.exports = {
 
         } 
         catch(e) {
-            console.log('Error: FilmesSeriesController: create: ' + e);
+            console.log('Error: FilmesSeriesController: addFavorito: ' + e);
             res.status = "error";
         } 
         finally {
@@ -278,9 +278,9 @@ module.exports = {
 
             const data = JSON.stringify(request.body);
             
-            const {idUsuario, idFilmeSerie} = JSON.parse(data);
-            const {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
-            idUsuario = id;
+            const {usuario, idFilmeSerie} = JSON.parse(data);
+            const {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            const idUsuario = id;
 
             const registry = await connection('favoritos').where({
                 idUsuario,
