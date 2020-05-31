@@ -4,13 +4,13 @@ const nodemailer = require('./Email');
 
 function EnviarEmail(toEmail,cod){
 
-    const url =   'http://localhost/ServicoStream/page/resetarsenha.html?token='+cod;
+    const url =   'https://mojal.netlify.app/page/resetarsenha.html?token='+cod;
     email = {
         from: "bdflix2020@gmail.com",
         to: toEmail,
         subject: 'MOJA FILMES',
         text: 'Alterar Senha',
-        html: '<h1>RESETAR SENHA</h1><br> <a href='+url+'>Clique aqui</a>'
+        html: ''
     };
 
     nodemailer.transport.sendMail(email,(error,info)=>{
