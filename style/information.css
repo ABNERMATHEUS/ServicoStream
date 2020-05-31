@@ -53,6 +53,19 @@ font-family: 'Oswald', sans-serif;
 
 
 
+.modal{
+    border-radius: 10px;
+    max-height: 100% !important;
+    width: 100%!important;
+}
+.modal-content {
+    border-radius: 20px;
+    border: solid 3px #26a69a;
+}
+
+
+
+
 
 
 
