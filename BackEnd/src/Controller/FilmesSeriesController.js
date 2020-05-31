@@ -138,11 +138,16 @@ module.exports = {
         const res = {status: ""};
         let query = {state: 1};
 
-        const {usuario, filtrarFavoritos, paramQuery} = request.query;
+        const {usuario, filtrarFavoritos, paramQuery} = request.body;
+
+        const {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+        const idUsuario = id;
         
        
-        if(usuario)
-            query.idUsuario = usuario; 
+        if(idUsuario)
+            query.idUsuario = idUsuario; 
+
+        console.log(query);
 
 
         let queryRaw = "1 > 0";
@@ -168,8 +173,7 @@ module.exports = {
 
                 //res.response = await connection().select('*').from('favoritos','filmeserie').where('idusuario','=',usuario)
              
-                res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeserie.idFilmeSerie').select().where(query);
-                console.log(query)
+                res.response = await connection('filmeSerie').innerJoin('favoritos', 'favoritos.idFilmeSerie', 'filmeSerie.idFilmeSerie').select().where(query);
             
             } else {
                 res.response = await connection('filmeSerie').select().where(query).whereRaw(queryRaw);
