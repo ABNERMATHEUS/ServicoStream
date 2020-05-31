@@ -43,7 +43,7 @@ $(document).ready(function() {
 
                 let cartaz=`<div class="col  s6 l2">
                                 <div class="card-content white-text">
-                                    <a href="/ServicoStream/page/information.html?id=` + obj.idFilmeSerie + `"><img class="responsive-img" src=`+obj.cartaz+`></img></a>
+                                    <a href="page/information.html?id=` + obj.idFilmeSerie + `"><img class="responsive-img" src=`+obj.cartaz+`></img></a>
                                 </div>
                             </div>`;
 
