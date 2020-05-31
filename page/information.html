@@ -153,12 +153,54 @@
                     
 
                 </ul>
-                <button class="font col s12 l12 red waves-effect waves-light btn-large" > Trailer</button>
+                <button data-target="modal" class="font col s12 l12 red waves-effect waves-light btn-large btn modal-trigger" > Trailer</button>
+
+                
 
 
-            
+
+        </div>
+
+    </div>
 
 
+    <!--MODAL TRAILER-->
+    <div id="modal" class="modal transparent">
+
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat right "> <i
+                class="material-icons white-text">close</i> </a>
+        <div class="modal-content">
+
+            <!-- <form method="POST" action="../php/login.php">-->
+            <div class="col s12 z-depth-6 card-panel transparent" id='login'>
+
+                <center id="erro" class="erro red-text animated fadeInDown delay-2s"></center>
+                <div class="row">
+
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix white-text">mail_outline</i>
+                        <input class=" white-text" id="email" type="email">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix white-text">lock_outline</i>
+                        <input id="password" type="password" class="input white-text">
+                        <label for="password">Password</label>
+                       <a class="senha teal-text right" href="page/senha.html">Esqueceu sua senha?</a> 
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light col s12" id="botao" disabled="false">Login</button>
+                    </div>
+
+                </div>
+
+
+            </div>
 
         </div>
 

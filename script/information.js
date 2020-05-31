@@ -1,6 +1,10 @@
 $(document).ready(function(){
     //buscarFilme("Spider-Man: Into the Spider-Verse");
     information.listar();
+    
+    $('.modal').modal({
+        opacity: 0.9
+    });
 
 
     $('#button_filme').click(function(){
