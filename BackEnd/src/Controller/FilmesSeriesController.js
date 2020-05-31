@@ -314,7 +314,7 @@ module.exports = {
             const t = 'NOW() - INTERVAL 1 MONTH;';
     
 
-            res.response = await connection('filmeserie').select().where(query).andWhere('created_on', '>=', knex.raw(t));
+            res.response = await connection('filmeserie').select().where({state: 1}).andWhere('created_on', '>=', knex.raw(t));
             res.status = "success";
             
         } 
