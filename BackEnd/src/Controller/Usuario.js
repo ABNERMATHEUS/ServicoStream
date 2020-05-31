@@ -48,8 +48,12 @@ module.exports = {
                     nascimento,
                     status
                 });
-    
-                EnviarEmailVerificao(email,cod); //Encaminhar Email para fazer verificação
+                try {
+                    EnviarEmailVerificao(email,cod);
+                } catch (error) {
+                    console.log(error);
+                }
+                //Encaminhar Email para fazer verificação
     
                 response.json({status:true});
                 
