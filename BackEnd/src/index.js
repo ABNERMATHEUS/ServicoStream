@@ -8,6 +8,7 @@ app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Originl','https://mojal.netlify.app');
     app.use(cors());
     next();
+   
 })
 
 app.use(express.json())

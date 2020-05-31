@@ -34,6 +34,7 @@ $(document).ready(function() {
         },
         type:'GET',
         url: 'https://mojal.herokuapp.com/filmesSeries/listar',
+        crossDomain: true,
         success: function(response){
 
             let arrayFilmesSeries = [];
