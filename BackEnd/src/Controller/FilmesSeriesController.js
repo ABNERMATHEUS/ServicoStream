@@ -311,10 +311,10 @@ module.exports = {
             // const {usuario, filtrarFavoritos} = request.query;
             // const {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
             // usuario = id;
-            const t = 'NOW() - INTERVAL 1 MONTH;';
+            const t = "NOW() - INTERVAL '1' MONTH;";
     
 
-            res.response = await connection('filmeserie').select().where("state", "=", 1).andWhere('created_on', '>=', knex.raw(t));
+            res.response = await connection('filmeSerie').select().where(query).andWhere('created_on', '>=', knex.raw(t));
             res.status = "success";
             
         } 
