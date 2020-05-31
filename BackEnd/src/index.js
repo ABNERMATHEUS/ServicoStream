@@ -5,7 +5,7 @@ const bodyParser = require("body-parser")
 
 const app = express();
 app.use((req,res,next)=>{
-    res.header('Access-Control-Allow-Originl','https://mojal.netlify.app');
+    res.setHeader('Access-Control-Allow-Originl','*');
     app.use(cors());
     next();
    
