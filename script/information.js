@@ -51,7 +51,7 @@ var information = {
             $.ajax({
                 dataType:'json',
                 data: {
-                    idUsuario: user,
+                    usuario: user,
                     idFilmeSerie: idFilme
                 },
                 type:'POST',
