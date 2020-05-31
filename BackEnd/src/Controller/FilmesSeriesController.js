@@ -140,8 +140,11 @@ module.exports = {
 
         const {usuario, filtrarFavoritos, paramQuery} = request.body;
 
-        const {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
-        const idUsuario = id;
+        let idUsuario = null;
+        if(usuario) {
+            const {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            idUsuario = id;
+        }
         
        
         if(idUsuario)
