@@ -18,6 +18,9 @@ $(document).ready(function() {
 
     $.ajax({
         dataType:'json',
+        data: {
+            usuario: localStorage.getItem('user')
+        },
         type:'GET',
         url: 'https://mojal.herokuapp.com/adicionadosRecentemente/listar',
         success: function(response){
