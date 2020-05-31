@@ -244,7 +244,8 @@ module.exports = {
             const data = JSON.stringify(request.body);
             
             const {idUsuario, idFilmeSerie} = JSON.parse(data);
-            idUsuario = {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            const {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            idUsuario = id;
             
 
 
@@ -278,7 +279,8 @@ module.exports = {
             const data = JSON.stringify(request.body);
             
             const {idUsuario, idFilmeSerie} = JSON.parse(data);
-            idUsuario = {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            const {id} = await jwt.verify(idUsuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            idUsuario = id;
 
             const registry = await connection('favoritos').where({
                 idUsuario,
@@ -306,8 +308,9 @@ module.exports = {
       
         try {
 
-            const {usuario, filtrarFavoritos} = request.query;
-            usuario = {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            // const {usuario, filtrarFavoritos} = request.query;
+            // const {id} = await jwt.verify(usuario,'chaveprivada'); //RETORNAR O JSON {ID:idUser}
+            // usuario = id;
             const t = 'NOW() - INTERVAL 1 MONTH;';
     
 
