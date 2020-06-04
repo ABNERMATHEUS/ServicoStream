@@ -6,9 +6,9 @@ if(!localStorage.getItem('user')){
     $('#nav').append(`<ul class=" right hide-on-med-and-down "> <button data-target="modal1" class="btn modal-trigger">Entrar</button>    <button data-target="modal2" class="btn modal-trigger teal darken-4 ">Registrar-se</button>   <!-- <a data-target="modal1" class="waves-effect waves-light btn black-text btn modal-trigger" ><i class="material-icons left ">person</i>Entrar</a>-->  </ul>`);
 
     $('#mobile-demo').append(`
-
-    <li> <a href="page/favoritos.html"><i class="material-icons teal-text">favorite</i>Favoritos</a></li>
-    <li> <a id="sair"><i class="material-icons teal-text">exit_to_app</i>Sair</a></li>`);
+    <li> <button data-target="modal1" class="btn modal-trigger">Entrar</button>
+    </li>
+    <li> <button data-target="modal2" class="btn modal-trigger teal darken-4 ">Registrar-se</button></li>`);
 
 
 }else{
@@ -19,12 +19,13 @@ if(!localStorage.getItem('user')){
    
     <li><a href="page/favoritos.html"><i class="material-icons">favorite</i>Favoritos</a></a></li>
     <li><a id="sair"><i class="material-icons">exit_to_app</i>Sair</a></li>
-  </ul>`)
+  </ul>`);
 
   $('#mobile-demo').append(`
-  <li> <button data-target="modal1" class="btn modal-trigger">Entrar</button>
-  </li>
-  <li> <button data-target="modal2" class="btn modal-trigger teal darken-4 ">Registrar-se</button></li>`);
+  <li> <a href="page/favoritos.html"><i class="material-icons teal-text">favorite</i>Favoritos</a></li>
+  <li> <a id="sair"><i class="material-icons teal-text">exit_to_app</i>Sair</a></li>`);
+
+  
 }
 
 $("#sair").click(function(){
