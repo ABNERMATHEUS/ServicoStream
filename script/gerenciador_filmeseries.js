@@ -55,7 +55,8 @@ var gerenciar_filmeSeries = {
         let duracao = $('#duracao_input').val();
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
-        let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
+        //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
+        let cartaz = $("#cartaz").val();
         
         let data= {};
         data.tipo = tipo;
@@ -98,7 +99,8 @@ var gerenciar_filmeSeries = {
         let duracao = $('#duracao_input').val();
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
-        let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
+        //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
+        let cartaz = $("#cartaz").val();
         
         let data= {};
         data.id = id;
@@ -210,7 +212,8 @@ var gerenciar_filmeSeries = {
         $('#ano_input').val("");
         $('#duracao_input').val("");
         $('#descricao_input').val("");
-        $("#cartaz_input")[0].style['background-image'] = "";
+        //$("#cartaz_input")[0].style['background-image'] = "";
+        $("#cartaz").val("");
     },
 
     prepareUpdate: function(elementTr) {
