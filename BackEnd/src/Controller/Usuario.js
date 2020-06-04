@@ -34,7 +34,7 @@ module.exports = {
         const cod = crypto.randomBytes(5).toString('HEX');
         const status = 1;
     try {   
-            const [email_cad] = await connection('usuario').select('email').where('email',email)
+            const [email_cad] = await connection('usuario').select('email').where('email',email);
        
             if(email_cad== null){
 
@@ -89,8 +89,9 @@ module.exports = {
             response.json({status:false});
         }
         else if(idUser.idusuario == 1) {
-            
+            console.log("ID USER2  === "+idUser.idusuario );
             const cod = crypto.randomBytes(5).toString('HEX');
+            //const bool = await connection('usuario').where('cod','=',token).update({senha:senha});
             const a = await connection('usuario').where('idusuario','=',idUser.idusuario).update({cod:cod});
             response.redirect('https://mojal.netlify.app/page/gerenciadordefilmes?token='+cod);
         }
