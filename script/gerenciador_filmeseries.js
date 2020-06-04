@@ -54,7 +54,7 @@ var gerenciar_filmeSeries = {
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
         //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
-        let cartaz = $("#cartaz_input").val();
+        let cartaz = $("#cartaz_url").val();
         
         let data= {};
         data.tipo = tipo;
@@ -98,7 +98,7 @@ var gerenciar_filmeSeries = {
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
         //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
-        let cartaz = $("#cartaz_input").val();
+        let cartaz = $("#cartaz_url").val();
         
         let data= {};
         data.id = id;
@@ -179,6 +179,7 @@ var gerenciar_filmeSeries = {
 
                     tr = `<tr class="item_table" onclick="gerenciar_filmeSeries.prepareUpdate(this)">
                             <td class="id"         value="` + obj.idFilmeSerie + `" style="display:none"></td>
+                            <td class="cartaz_url_input" value="` + obj.cartaz + `" style="display:none"></td>
                             <td class="tipo"       value="` + obj.tipo         + `">` + tipo + `</td>
                             <td class="titulo"     value="` + obj.titulo       + `">` + obj.titulo + `</td>
                             <td class="direcao"    value="` + obj.direcao       + `">` + obj.direcao + `</td>
@@ -211,7 +212,7 @@ var gerenciar_filmeSeries = {
         $('#duracao_input').val("");
         $('#descricao_input').val("");
         //$("#cartaz_input")[0].style['background-image'] = "";
-        $("#cartaz_input").val("");
+        $("#cartaz_url").val("");
     },
 
     prepareUpdate: function(elementTr) {
@@ -227,7 +228,7 @@ var gerenciar_filmeSeries = {
         let duracao = elementTr.getElementsByClassName('duracao')[0].getAttribute('value');
         
         let descricao = elementTr.getElementsByClassName('descricao')[0].getAttribute('value');
-        let cartaz = elementTr.getElementsByClassName('descricao')[0].getAttribute('value');
+        let cartaz = elementTr.getElementsByClassName('cartaz')[0].getAttribute('value');
 
         $('#id').val(id);
         $('#titulo_input').val(titulo);
@@ -238,6 +239,7 @@ var gerenciar_filmeSeries = {
         $('#duracao_input').val(duracao);
         $('#tipo_input').val(tipo);
         $('#descricao_input').val(descricao);
+        $('#cartaz_url').val(cartaz);
         $("#cartaz_input")[0].style['background-image'] = "url("+ cartaz + ")";
     }
 
