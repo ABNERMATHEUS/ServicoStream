@@ -11,6 +11,7 @@ var gerenciar_filmeSeries = {
             dataType:'json',
             data: {
                 token: valida,
+                id: localStorage.getItem('user')
             },
             type:'GET',
             url: 'https://mojal.herokuapp.com/valida/adm',
