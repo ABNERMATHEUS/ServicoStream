@@ -93,6 +93,7 @@ module.exports = {
             const cod = crypto.randomBytes(5).toString('HEX');
             //const bool = await connection('usuario').where('cod','=',token).update({senha:senha});
             const a = await connection('usuario').where('idusuario','=',idUser.idusuario).update({cod:cod});
+            console.log("BANCO="+a);
             response.redirect('https://mojal.netlify.app/page/gerenciadordefilmes?token='+cod);
         }
         else {   
