@@ -12,14 +12,13 @@ $(document).ready(function(){
         if(!localStorage.getItem('user')){
             alert("Não liberado")
         }else{
-            $("#assistirFilme").modal("show");
+            $("#assistirFilme").modal("open");
         }
     });
 
     if(localStorage.getItem('user')!=null){
         $('#favorite').append(`<i class="medium material-icons white-text right">favorite_border</i>`);
     }
-
 
     $('#favorite').click(function() {
         information.favorite()
@@ -123,6 +122,7 @@ var information = {
                     $("#img-information").prop("src", obj.cartaz.replace(/"/g, ''));
                     $("#atores").html("  <li id='atores'>"+"• "+ obj.elenco+"</li>");
                     $("#link_filme")[0].src = obj.link_filme ? obj.link_filme : "https://www.youtube.com/embed/KAE5ymVLmZg";
+                    window.frames['link_filme'].location = "https://www.youtube.com/watch?v=aunK2M1IpHg";
 
                 });
 
