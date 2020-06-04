@@ -4,10 +4,12 @@ module.exports = {
     async valida (request,response){
         const {token}  = request.query;
         console.log("TOKEN"+token);
+
         
         try {
-           
-            const [idUser] = await connection('usuario').select('idusuario').where('cod',token);
+            
+           // const [email_cad] = await connection('usuario').select('email').where('email',email);
+            const [idUser] = await connection('usuario').select('idusuario').where('cod','db343e32fb');
             console.log('ID USER'+idUser.idusuario);
             if(!idUser){
 
