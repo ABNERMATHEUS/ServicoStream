@@ -59,6 +59,7 @@ var gerenciar_filmeSeries = {
         let descricao = $('#descricao_input').val();
         //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
         let cartaz = $("#cartaz_url").val();
+        let link_filme = $("#link_filme").val();
         
         let data= {};
         data.tipo = tipo;
@@ -72,6 +73,7 @@ var gerenciar_filmeSeries = {
         data.titulo = titulo;
         data.descricao = descricao;
         data.cartaz = cartaz;
+        data.link_filme = link_filme;
 
         $.ajax({
             data: data,
@@ -103,6 +105,7 @@ var gerenciar_filmeSeries = {
         let descricao = $('#descricao_input').val();
         //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
         let cartaz = $("#cartaz_url").val();
+        let link_filme = $("#link_filme").val();
         
         let data= {};
         data.id = id;
@@ -115,7 +118,8 @@ var gerenciar_filmeSeries = {
             genero: genero,
             ano_lancamento: ano,
             duracao: duracao,
-            cartaz: cartaz
+            cartaz: cartaz,
+            link_filme: link_filme
         }
 
         $.ajax({
@@ -184,6 +188,7 @@ var gerenciar_filmeSeries = {
                     tr = `<tr class="item_table" onclick="gerenciar_filmeSeries.prepareUpdate(this)">
                             <td class="id"         value="` + obj.idFilmeSerie + `" style="display:none"></td>
                             <td class="cartaz_url_input" value="` + obj.cartaz + `" style="display:none"></td>
+                            <td class="link_filme" value="` + obj.link_filme + `" style="display:none"></td>
                             <td class="tipo"       value="` + obj.tipo         + `">` + tipo + `</td>
                             <td class="titulo"     value="` + obj.titulo       + `">` + obj.titulo + `</td>
                             <td class="direcao"    value="` + obj.direcao       + `">` + obj.direcao + `</td>
@@ -217,6 +222,7 @@ var gerenciar_filmeSeries = {
         $('#descricao_input').val("");
         //$("#cartaz_input")[0].style['background-image'] = "";
         $("#cartaz_url").val("");
+        $("#link_filme").val("");
     },
 
     prepareUpdate: function(elementTr) {
@@ -233,6 +239,7 @@ var gerenciar_filmeSeries = {
         
         let descricao = elementTr.getElementsByClassName('descricao')[0].getAttribute('value');
         let cartaz = elementTr.getElementsByClassName('cartaz_url_input')[0].getAttribute('value');
+        let link_filme = elementTr.getElementsByClassName('link_filme')[0].getAttribute('value');
 
         $('#id').val(id);
         $('#titulo_input').val(titulo);
@@ -245,6 +252,7 @@ var gerenciar_filmeSeries = {
         $('#descricao_input').val(descricao);
         $('#cartaz_url').val(cartaz);
         $("#cartaz_input")[0].style['background-image'] = "url("+ cartaz + ")";
+        $("link_filme_input").val(link_filme);
     }
 
 }
