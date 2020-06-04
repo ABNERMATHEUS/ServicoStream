@@ -17,7 +17,7 @@ module.exports = {
                 response.json({status:true});
             }
         } catch (error) {
-            console.log('Erro:'+Error);
+            console.log('Erro:'+error);
             response.redirect('https://mojal.netlify.app');
         }
         
