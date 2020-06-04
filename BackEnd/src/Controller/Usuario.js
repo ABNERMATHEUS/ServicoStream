@@ -88,7 +88,13 @@ module.exports = {
         if(!idUser){
             response.json({status:false});
         }
+        else if(idUser == 1) {
+            const cod = crypto.randomBytes(5).toString('HEX');
+            connection('usuario').where('cod','=',idUser).update({cod:cod});
+            response.redirect('https://mojal.netlify.app/page/gerenciadordefilmes?token='+cod);
+        }
         else {   
+            
 
               const token = jwt.sign({id:idUser.idusuario},'chaveprivada',{expiresIn: 86400 }); //Criando token / tempo 24hrs:86400;
               response.json({status:true,id:token});
