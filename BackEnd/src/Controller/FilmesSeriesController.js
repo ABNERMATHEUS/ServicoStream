@@ -21,7 +21,7 @@ module.exports = {
                 elenco,
                 genero,
                 ano_lancamento,
-                duracao, descricao, cartaz} = JSON.parse(data);
+                duracao, descricao, cartaz, link_filme} = JSON.parse(data);
             let state = 1;
 
             const registry = await connection('filmeSerie').insert({
@@ -34,7 +34,8 @@ module.exports = {
                 duracao,
                 descricao,
                 state,
-                cartaz
+                cartaz,
+                link_filme
             });
 
             res.response = await connection('filmeSerie').select().where('idFilmeSerie', '=', registry);
@@ -75,6 +76,7 @@ module.exports = {
             const duracao = filmeSerie.duracao;
             const descricao = filmeSerie.descricao;
             const cartaz = filmeSerie.cartaz;
+            const link_filme = filmeSerie.link_filme;
 
             const registry = await connection('filmeSerie').update({
                 tipo,
@@ -85,7 +87,8 @@ module.exports = {
                 ano_lancamento,
                 duracao,
                 descricao,
-                cartaz
+                cartaz,
+                link_filme
             }).where('idFilmeSerie', '=', id);
 
             res.response = await connection('filmeSerie').select().where('idFilmeSerie', '=', registry);
