@@ -43,7 +43,7 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: create: ' + e);
-            res.status = "error";
+            res.status = "Error: FilmesSeriesController: create:";
         } 
         finally {
             response.json(res);
@@ -94,7 +94,7 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: update: ' + e); 
-            res.status = "error";
+            res.status = "Error: FilmesSeriesController: update: ";
         } 
         finally {
             response.json(res);
@@ -124,7 +124,7 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: exclude: ' + e);
-            res.status = "error";
+            res.status = "Error: FilmesSeriesController: exclude: ";
         } 
         finally {
             response.json(res);
@@ -187,7 +187,7 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: list: ' + e);
-            res.status = "error";
+            res.status = "Error: FilmesSeriesController: list: ";
         } 
         finally {
             response.json(res);
@@ -209,8 +209,8 @@ module.exports = {
             
         } 
         catch(e) {
-            console.log('Error: FilmesSeriesController: list: ' + e);
-            res.status = "error";
+            console.log('Error: FilmesSeriesController: getInfomation: ' + e);
+            res.status = "Error: FilmesSeriesController: getInfomation: ";
         } 
         finally {
             response.json(res);
@@ -230,8 +230,8 @@ module.exports = {
             
         } 
         catch(e) {
-            console.log('Error: FilmesSeriesController: list: ' + e);
-            res.status = "error";
+            console.log('Error: FilmesSeriesController: getCartaz: ' + e);
+            res.status = "Error: FilmesSeriesController: getCartaz: ";
         } 
         finally {
             response.json(res);
@@ -266,7 +266,7 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: addFavorito: ' + e);
-            res.status = "error";
+            res.status = "Error: FilmesSeriesController: addFavorito: ";
         } 
         finally {
             response.json(res);
@@ -299,7 +299,7 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: removeFavorito: ' + e);
-            res.status = "error";
+            res.status = "Error: FilmesSeriesController: removeFavorito: ";
         } 
         finally {
             response.json(res);
@@ -327,7 +327,7 @@ module.exports = {
         } 
         catch(e) {
             console.log('Error: FilmesSeriesController: listarAdicionadosRecentemente: ' + e);
-            res.status = "error";
+            res.status = "Error: FilmesSeriesController: listarAdicionadosRecentemente: ";
         } 
         finally {
             response.json(res);
