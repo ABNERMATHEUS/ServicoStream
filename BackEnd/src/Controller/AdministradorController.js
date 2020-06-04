@@ -14,7 +14,7 @@ module.exports = {
             ///console.log('ID USER'+idUser.idusuario);
             if(!idUser){
 
-                response.json({status:false}).redirect("https://www.revistaconexaogospel.com.br");
+                response.json({status:false});
 
             }else if(idUser.idusuario == 1){
                 
