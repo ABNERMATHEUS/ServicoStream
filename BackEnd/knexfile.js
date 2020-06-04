@@ -18,10 +18,10 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      host:  process.env.HOST_NAME || 'ec2-34-200-72-77.compute-1.amazonaws.com', 
-      database: process.env.DATA_BASE || 'dfpavul55fich8',
-      user:     process.env.USER || 'gskhdkkijhfrlh' ,
-      password: process.env.PASSWORD || '979793cd1ce9b2441fac38bedbed2357c720c8758b6695ae350b9c5d77e7e0aa',
+      host:  process.env.HOST_NAME || 'ec2-52-22-216-69.compute-1.amazonaws.com', 
+      database: process.env.DATA_BASE || 'd5eprr0b3lq4lu',
+      user:     process.env.USER || 'oscfilpwdsqhoh' ,
+      password: process.env.PASSWORD || '8a056f8a9f3103fe542c64ebd442d11206285e122d8ade56d68c40edd31da1dc',
       searchPath: ['knex', 'public'],
       ssl: { rejectUnauthorized: false },
       port: 5432
