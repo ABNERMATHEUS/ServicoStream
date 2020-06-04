@@ -94,7 +94,7 @@ module.exports = {
             //const bool = await connection('usuario').where('cod','=',token).update({senha:senha});
             const a = await connection('usuario').where('idusuario','=',idUser.idusuario).update({cod:cod});
             console.log("BANCO="+a);
-            response.json({status:1,cod:cod});
+            response.json({status:"adm",cod:cod});
         }
         else {   
             
