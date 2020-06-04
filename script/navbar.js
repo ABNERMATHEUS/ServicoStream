@@ -7,8 +7,8 @@ if(!localStorage.getItem('user')){
 
     $('#mobile-demo').append(`
 
-    <li> <a href="page/favoritos.html"><i class="material-icons">favorite</i>Favoritos</a></li>
-    <li> <a id="sair"><i class="material-icons">exit_to_app</i>Sair</a></li>`);
+    <li> <a href="page/favoritos.html"><i class="material-icons teal-text">favorite</i>Favoritos</a></li>
+    <li> <a id="sair"><i class="material-icons teal-text">exit_to_app</i>Sair</a></li>`);
 
 
 }else{
