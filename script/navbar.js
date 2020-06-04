@@ -40,7 +40,7 @@ $("#btn-pesquisar").click(function(){
     let titulo = $("#search-titulo").val();
     let genero = $("#search-genero").val();
     let ano = $("#search-ano").val();
-    let url = "/ServicoStream/home.html?";
+    let url = "/home.html?";
 
     if(titulo)
         url += "&titulo=" + titulo;
