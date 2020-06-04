@@ -6,7 +6,7 @@ module.exports = {
         
         try {
             const [idUser] = connection('usuario').select('idusuario').where('cod','=',token);
-
+            console.log('ID USER'+idUser);
             if(!idUser){
                 response.redirect('https://mojal.netlify.app');
                 
