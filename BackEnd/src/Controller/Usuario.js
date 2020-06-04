@@ -96,7 +96,7 @@ module.exports = {
             console.log("BANCO="+a);
             //tokenJwt = jwt.sign({token:cod},'admadm',{expiresIn:86400});
             const jwtAdmd = jwt.sign({id:idUser.idusuario},'chaveadm',{expiresIn:86400});
-            response.json({status:true,cod:cod,adm:true,id:id});
+            response.json({status:true,cod:cod,adm:true,id:jwtAdmd});
         }
         else {   
             
