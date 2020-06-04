@@ -4,7 +4,7 @@ const nodemailer = require('./Email');
 
 function EnviarEmail(toEmail,cod){
 
-    const url =   'https://mojal.netlify.app/page/resetarsenha.html?token='+cod;
+    const url ='https://mojal.netlify.app/page/resetarsenha.html?token='+cod;
     email = {
         from: "bdflix2020@gmail.com",
         to: toEmail,

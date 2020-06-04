@@ -8,7 +8,7 @@ module.exports ={
         const {cod} = request.query // http://localhost:3333/valida?cod=(código de verificacao)
         
         await connection('usuario').where('cod','=',cod).update({verificado:1})
-        response.redirect('https://mojal.netlify.app/page/verificacao.html/'+cod); // Redirecionar para uma página de dizendo que foi vereficado (FRONT)
+        response.redirect('https://mojal.netlify.app/page/verificacao.html'); // Redirecionar para uma página de dizendo que foi vereficado (FRONT)
         
     }, 
 
