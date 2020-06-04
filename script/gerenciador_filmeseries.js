@@ -228,7 +228,7 @@ var gerenciar_filmeSeries = {
         let duracao = elementTr.getElementsByClassName('duracao')[0].getAttribute('value');
         
         let descricao = elementTr.getElementsByClassName('descricao')[0].getAttribute('value');
-        let cartaz = elementTr.getElementsByClassName('cartaz')[0].getAttribute('value');
+        let cartaz = elementTr.getElementsByClassName('cartaz_url_input')[0].getAttribute('value');
 
         $('#id').val(id);
         $('#titulo_input').val(titulo);
