@@ -169,7 +169,7 @@ module.exports = {
             queryRaw += " and ano_lancamento = '" + ano + "'";
         }
             
-        console.log(queryRaw)y
+        console.log(queryRaw)
             
 
         try {
