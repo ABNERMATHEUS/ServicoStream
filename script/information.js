@@ -12,7 +12,7 @@ $(document).ready(function(){
         if(!localStorage.getItem('user')){
             alert("Não liberado")
         }else{
-            alert('usuario Liberado')
+            $("#assistirFilme").modal("show");
         }
     });
 
