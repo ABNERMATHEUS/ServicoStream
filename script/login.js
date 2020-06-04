@@ -56,7 +56,7 @@ function  Login(){
                 $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow"></center>')
                
                
-               if(response.status == "adm"){
+               if(response.adm == true){
                    window.location.href="https://mojal.netlify.app/page/gerenciadordefilmes?token="+response.cod;
                }else{
                 localStorage.setItem('user',response.id); //define qual usuario é 
