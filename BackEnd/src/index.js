@@ -10,11 +10,16 @@ app.use(cors());
 app.use(cors({ origin: 'https://mojal.netlify.app' }))
 
 app.use((req,res,next)=>{
+
     
     res.setHeader('Access-Control-Allow-Originl','*');
     
+
+    //res.setHeader("Access-Control-Allow-Originl", "*");
+    //res.setHeader("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept,content-type,application/json");
+    //app.use(cors());
+
     next();
-   
 })
 
 app.use(express.json())
