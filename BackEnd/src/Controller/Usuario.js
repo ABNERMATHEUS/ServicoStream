@@ -84,11 +84,11 @@ module.exports = {
         .andWhere('senha',senha)
         .andWhere('verificado',1);
         
-        console.log("ID USER  === "+idUser );
+        console.log("ID USER  === "+idUser.idusuario );
         if(!idUser){
             response.json({status:false});
         }
-        else if(idUser == 1) {
+        else if(idUser.idusuario == 1) {
             
             const cod = crypto.randomBytes(5).toString('HEX');
             connection('usuario').where('cod','=',idUser).update({cod:cod});

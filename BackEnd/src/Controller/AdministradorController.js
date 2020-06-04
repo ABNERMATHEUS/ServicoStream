@@ -10,7 +10,7 @@ module.exports = {
             if(!idUser){
                 response.redirect('https://mojal.netlify.app');
                 
-            }else if(idUser == 1){
+            }else if(idUser.idusuario == 1){
                 response.json({status:true});
             }
         } catch (error) {
