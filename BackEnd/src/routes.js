@@ -3,6 +3,7 @@ const UsuarioController = require('./Controller/Usuario')
 const VerificaoController = require('./Controller/VerificacaoController');
 const RecuperacaoController = require('./Controller/RecuperacaoController');
 const FilmesSeriesController = require('./Controller/FilmesSeriesController');
+const AdministradorController = require('./Controller/AdministradorController');
 
 
 const Routes = express.Router();
@@ -26,6 +27,8 @@ Routes.get('/adicionadosRecentemente/listar',FilmesSeriesController.listarAdicio
 Routes.get('/filmesSeries/listar',FilmesSeriesController.list);
 Routes.get('/filmesSeries/getImg',FilmesSeriesController.getCartaz);
 Routes.get('/filmesSeries/information',FilmesSeriesController.getInfomation);
+
+Routes.get('/valida/adm',AdministradorController.valida);
 
 
 

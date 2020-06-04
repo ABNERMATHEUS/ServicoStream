@@ -34,7 +34,7 @@ module.exports = {
         const cod = crypto.randomBytes(5).toString('HEX');
         const status = 1;
     try {   
-            const [email_cad] = await connection('usuario').select('email').where('email',email)
+            const [email_cad] = await connection('usuario').select('email').where('email',email);
        
             if(email_cad== null){
 
@@ -84,11 +84,20 @@ module.exports = {
         .andWhere('senha',senha)
         .andWhere('verificado',1);
         
-        
+        console.log("ID USER  === "+idUser.idusuario );
         if(!idUser){
             response.json({status:false});
         }
+        else if(idUser.idusuario == 1) {
+            console.log("ID USER2  === "+idUser.idusuario );
+            const cod = crypto.randomBytes(5).toString('HEX');
+            //const bool = await connection('usuario').where('cod','=',token).update({senha:senha});
+            const a = await connection('usuario').where('idusuario','=',idUser.idusuario).update({cod:cod});
+            console.log("BANCO="+a);
+            response.json({status:true,cod:cod,adm:true});
+        }
         else {   
+            
 
               const token = jwt.sign({id:idUser.idusuario},'chaveprivada',{expiresIn: 86400 }); //Criando token / tempo 24hrs:86400;
               response.json({status:true,id:token});
@@ -96,7 +105,7 @@ module.exports = {
             }
 
     } catch (error) {
-
+        console.log(error);
         response.json({status:false});
     }
 

@@ -12,6 +12,8 @@ const favoritos = {
 
         const user = localStorage.getItem('user');
 
+        
+
         $.ajax({
             dataType:'json',
             data: {

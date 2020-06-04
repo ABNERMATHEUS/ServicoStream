@@ -55,11 +55,14 @@ function  Login(){
                 
                 $('.erro').html('<center id="erro" class="erro red-text animated fadeInDown slow"></center>')
                
-                localStorage.setItem('user',response.id); //define qual usuario é 
-               if(response.id == 1){
-                   window.location.href="http://localhost/ServicoStream/page/gerenciadorDeFilmes.html"
+               
+               if(response.adm == true){
+                   window.location.href="https://mojal.netlify.app/page/gerenciadordefilmes?token="+response.cod;
                }else{
-                location.reload();}
+                localStorage.setItem('user',response.id); //define qual usuario é 
+                location.reload();
+            }
+
             }
            
             
