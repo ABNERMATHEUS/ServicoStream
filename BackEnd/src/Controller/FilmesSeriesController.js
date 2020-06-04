@@ -166,10 +166,10 @@ module.exports = {
         }
         
         if(ano) {
-            queryRaw += " and ano_lancamento = " + ano;
+            queryRaw += " and ano_lancamento = '" + ano + "'";
         }
             
-        console.log(queryRaw)
+        console.log(queryRaw)y
             
 
         try {
