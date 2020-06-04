@@ -5,7 +5,9 @@ const bodyParser = require("body-parser")
 
 const app = express();
 app.use((req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Originl','*');
+    //res.setHeader('Access-Control-Allow-Originl','*');
+    res.header('Access-Control-Allow-Originl','*');
+    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
     app.use(cors());
     next();
    
