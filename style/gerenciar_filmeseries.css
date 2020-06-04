@@ -59,7 +59,8 @@ embed {
 #elenco_input,
 #genero_input,
 #ano_input,
-#duracao_input{
+#duracao_input,
+#cartaz_url{
     padding-left: 13px;
     color: #fff;
     border-color: #070c16;
