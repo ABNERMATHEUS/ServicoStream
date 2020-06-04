@@ -27,7 +27,7 @@ const favoritos = {
                 
                 arrayFilmesSeries.forEach(function(obj) {
                     let filme = `<div class="cartaz" style='background-image: url(` + obj.cartaz + `);'>
-                                    <a href="page/information.html?id=` + obj.idFilmeSerie + `">
+                                    <a href="information.html?id=` + obj.idFilmeSerie + `">
                                     <div class="cartaz-descricao">
                                         <i class="material-icons icon-play">play_arrow</i>
                                     </div>
