@@ -30,7 +30,7 @@ $(document).ready(function() {
     $.ajax({
         dataType:'json',
         data: {
-            paramQuery: paramQuery
+            paramQuery: JSON.stringify(paramQuery)
         },
         type:'GET',
         url: 'https://mojal.herokuapp.com/filmesSeries/listar',
