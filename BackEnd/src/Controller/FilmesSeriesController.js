@@ -141,7 +141,7 @@ module.exports = {
         const res = {status: ""};
         let query = {state: 1};
 
-        const {usuario, filtrarFavoritos, paramQuery} = request.query;
+        const {usuario, filtrarFavoritos, paramQuery, titulo, genero, ano} = request.query;
 
         let idUsuario = null;
         if(usuario) {
@@ -157,20 +157,19 @@ module.exports = {
 
 
         let queryRaw = "1 > 0";
-        if(paramQuery) {
-            if(paramQuery.titulo) {
-                queryRaw += " and titulo like '%" + paramQuery.titulo + "%'";
-            }
-
-            if(paramQuery.genero) {
-                queryRaw += " and genero like '%" + paramQuery.genero + "%'";
-            }
-            
-            if(paramQuery.ano) {
-                queryRaw += " and ano_lancamento = " + paramQuery.ano;
-            }
-            
+        if(titulo) {
+            queryRaw += " and titulo like '%" + titulo + "%'";
         }
+
+        if(genero) {
+            queryRaw += " and genero like '%" + genero + "%'";
+        }
+        
+        if(ano) {
+            queryRaw += " and ano_lancamento = " + ano;
+        }
+            
+        console.log(queryRaw)
             
 
         try {

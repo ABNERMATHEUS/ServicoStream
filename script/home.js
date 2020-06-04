@@ -27,13 +27,12 @@ $(document).ready(function() {
     let paramQuery = $.getQueryParameters();
     delete paramQuery[""];
 
+    JSON.stringify(paramQuery);
+
     $.ajax({
         dataType:'json',
-        data: {
-            paramQuery: JSON.stringify(paramQuery)
-        },
         type:'GET',
-        url: 'https://mojal.herokuapp.com/filmesSeries/listar',
+        url: 'https://mojal.herokuapp.com/filmesSeries/listar' + location.search,
         crossDomain: true,
         success: function(response){
 
