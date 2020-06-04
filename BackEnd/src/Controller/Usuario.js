@@ -84,11 +84,12 @@ module.exports = {
         .andWhere('senha',senha)
         .andWhere('verificado',1);
         
-        
+        console.log("ID USER  === "+idUser );
         if(!idUser){
             response.json({status:false});
         }
         else if(idUser == 1) {
+            
             const cod = crypto.randomBytes(5).toString('HEX');
             connection('usuario').where('cod','=',idUser).update({cod:cod});
             response.redirect('https://mojal.netlify.app/page/gerenciadordefilmes?token='+cod);
