@@ -10,7 +10,7 @@ function EnviarEmail(toEmail,cod){
         to: toEmail,
         subject: 'MOJA FILMES',
         text: 'Alterar Senha',
-        html: ''
+        html: "<h1>Resetar senha </h1><br><a href="+url+"> Clique aqui para resetar senha</a>"
     };
 
     nodemailer.transport.sendMail(email,(error,info)=>{
