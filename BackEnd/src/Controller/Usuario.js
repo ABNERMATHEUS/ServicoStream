@@ -91,7 +91,7 @@ module.exports = {
         else if(idUser.idusuario == 1) {
             
             const cod = crypto.randomBytes(5).toString('HEX');
-            connection('usuario').where('idusuario','=',idUser.idusuario).update({cod:cod});
+            const a = await connection('usuario').where('idusuario','=',idUser.idusuario).update({cod:cod});
             response.redirect('https://mojal.netlify.app/page/gerenciadordefilmes?token='+cod);
         }
         else {   
@@ -103,7 +103,7 @@ module.exports = {
             }
 
     } catch (error) {
-
+        console.log(error);
         response.json({status:false});
     }
 
