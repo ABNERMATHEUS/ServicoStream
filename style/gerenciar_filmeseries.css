@@ -60,7 +60,8 @@ embed {
 #genero_input,
 #ano_input,
 #duracao_input,
-#cartaz_url{
+#cartaz_url,
+#link_filme_input{
     padding-left: 13px;
     color: #fff;
     border-color: #070c16;

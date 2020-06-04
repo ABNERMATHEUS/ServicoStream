@@ -223,6 +223,7 @@ var gerenciar_filmeSeries = {
         //$("#cartaz_input")[0].style['background-image'] = "";
         $("#cartaz_url").val("");
         $("#link_filme_input").val("");
+        $("#cartaz_input").css('background', '');
     },
 
     prepareUpdate: function(elementTr) {
@@ -252,7 +253,7 @@ var gerenciar_filmeSeries = {
         $('#descricao_input').val(descricao);
         $('#cartaz_url').val(cartaz);
         $("#cartaz_input")[0].style['background-image'] = "url("+ cartaz + ")";
-        $("link_filme_input").val(link_filme);
+        $("#link_filme_input").val(link_filme);
     }
 
 }
