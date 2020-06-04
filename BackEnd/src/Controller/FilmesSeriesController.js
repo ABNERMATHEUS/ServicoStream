@@ -138,7 +138,7 @@ module.exports = {
         const res = {status: ""};
         let query = {state: 1};
 
-        const {usuario, filtrarFavoritos, paramQuery} = request.body;
+        const {usuario, filtrarFavoritos, paramQuery} = request.query;
 
         let idUsuario = null;
         if(usuario) {
