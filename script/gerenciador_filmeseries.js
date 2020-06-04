@@ -17,11 +17,11 @@ var gerenciar_filmeSeries = {
             url: 'https://mojal.herokuapp.com/valida/adm',
             success: function(response){
                 if(response.status != true){
-                    window.location.href="https://mojal.netlify.app";
+                   // window.location.href="https://mojal.netlify.app";
                 }
             },
             error:function(response){
-                window.location.href="https://mojal.netlify.app";
+             //   window.location.href="https://mojal.netlify.app";
             }
         });
         

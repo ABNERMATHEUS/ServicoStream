@@ -27,7 +27,7 @@ $(document).ready(function() {
             
             arrayFilmesSeries.forEach(function(obj) {
 
-                let cartaz=`<div class="col  s6 l2">
+                let cartaz=`<div class="col s6 l2">
                                 <div class="card-content white-text">
                                     <a href="information.html?id=` + obj.idFilmeSerie + `"><img class="responsive-img" src=`+obj.cartaz+`></img></a>
                                 </div>
