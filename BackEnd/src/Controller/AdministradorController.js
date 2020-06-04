@@ -14,7 +14,7 @@ module.exports = {
             ///console.log('ID USER'+idUser.idusuario);
             if(!idUser){
 
-                response.json({status:false});
+                response.redirect(200,"https://mojal.netlify.app");
 
             }else if(idUser.idusuario == 1){
                 
