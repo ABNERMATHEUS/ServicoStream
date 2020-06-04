@@ -4,7 +4,7 @@ var gerenciar_filmeSeries = {
 
     init: function() {
 
-        const user = localStorage.getItem('user');
+        
         const valida = location.search.replace(/[?/token=]/g, '');
 
         $.ajax({
@@ -15,8 +15,10 @@ var gerenciar_filmeSeries = {
             type:'GET',
             url: 'https://mojal.herokuapp.com/valida/adm',
             success: function(response){
+                
             },
             error:function(response){
+                
             }
         });
         
