@@ -4,11 +4,22 @@ var gerenciar_filmeSeries = {
 
     init: function() {
 
-        const user = localStorage.getItem('user')
-        if(user != 1) {
-            location.href = 'https://mojal.netlify.app';
-        }
+        const user = localStorage.getItem('user');
+        const valida = location.search.replace(/[?/token=]/g, '');
 
+        $.ajax({
+            dataType:'json',
+            data: {
+                token: valida,
+            },
+            type:'GET',
+            url: 'https://mojal.herokuapp.com/valida/adm',
+            success: function(response){
+            },
+            error:function(response){
+            }
+        });
+        
         $("#btn_adicionar").on('click', function() {
             gerenciar_filmeSeries.adicionar();
         });
