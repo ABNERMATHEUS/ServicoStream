@@ -18,6 +18,8 @@ if(!localStorage.getItem('user')){
     <ul id='dropdown1' class='black dropdown-content'>
    
     <li><a href="page/favoritos.html"><i class="material-icons">favorite</i>Favoritos</a></a></li>
+    <li><a class="white-text" href="page/adicionados_recentemente.html">Adicionados recentemente</a></li>
+
     <li><a id="sair"><i class="material-icons">exit_to_app</i>Sair</a></li>
   </ul>`);
 
