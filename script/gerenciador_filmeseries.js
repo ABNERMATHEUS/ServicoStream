@@ -6,7 +6,7 @@ var gerenciar_filmeSeries = {
 
         const user = localStorage.getItem('user')
         if(user != 1) {
-            location.href = '/';
+            location.href = 'https://mojal.netlify.app';
         }
 
         $("#btn_adicionar").on('click', function() {
