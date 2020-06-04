@@ -29,7 +29,7 @@ function ResetarSenha(){
             type:'POST',
             success:function(response){
                 if(response==true){
-                    window.location.href="https://mojal.herokuapp.com/page/resetarsenhaSucesso.html"
+                    window.location.href="https://mojal.netlify.app/page/resetarsenhasucesso";
                 }else{
                     $('.erro').html('<span class="erro red-text .center-align animated fadeInUp slow">Por favor entre novamente no email</span>')
                 }
