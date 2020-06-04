@@ -56,7 +56,7 @@ var gerenciar_filmeSeries = {
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
         //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
-        let cartaz = $("#cartaz").val();
+        let cartaz = $("#cartaz_input").val();
         
         let data= {};
         data.tipo = tipo;
@@ -100,7 +100,7 @@ var gerenciar_filmeSeries = {
         let tipo = $('#tipo_input').val();
         let descricao = $('#descricao_input').val();
         //let cartaz = $("#cartaz_input")[0].style['background-image'].slice(4, -1);
-        let cartaz = $("#cartaz").val();
+        let cartaz = $("#cartaz_input").val();
         
         let data= {};
         data.id = id;
@@ -213,7 +213,7 @@ var gerenciar_filmeSeries = {
         $('#duracao_input').val("");
         $('#descricao_input').val("");
         //$("#cartaz_input")[0].style['background-image'] = "";
-        $("#cartaz").val("");
+        $("#cartaz_input").val("");
     },
 
     prepareUpdate: function(elementTr) {
@@ -229,36 +229,18 @@ var gerenciar_filmeSeries = {
         let duracao = elementTr.getElementsByClassName('duracao')[0].getAttribute('value');
         
         let descricao = elementTr.getElementsByClassName('descricao')[0].getAttribute('value');
-        let cartaz = '';
+        let cartaz = elementTr.getElementsByClassName('descricao')[0].getAttribute('value');
 
-        $.ajax({
-            data: {
-                id: id
-            },
-            dataType:'json',
-            type:'GET',
-            url: 'https://mojal.herokuapp.com/filmesSeries/getImg',
-            success: function(response){
-                if(response.response)
-                    cartaz = response.response[0].cartaz;
-                else 
-                    cartaz = "url(https://pasteboard.co/css/../images/splash-image.png)";
-            },
-            error:function(response){
-                
-            }
-        }).then(function() {
-            $('#id').val(id);
-            $('#titulo_input').val(titulo);
-            $('#direcao_input').val(direcao);
-            $('#elenco_input').val(elenco);
-            $('#genero_input').val(genero);
-            $('#ano_input').val(ano);
-            $('#duracao_input').val(duracao);
-            $('#tipo_input').val(tipo);
-            $('#descricao_input').val(descricao);
-            $("#cartaz_input")[0].style['background-image'] = "url("+ cartaz + ")";
-        });
+        $('#id').val(id);
+        $('#titulo_input').val(titulo);
+        $('#direcao_input').val(direcao);
+        $('#elenco_input').val(elenco);
+        $('#genero_input').val(genero);
+        $('#ano_input').val(ano);
+        $('#duracao_input').val(duracao);
+        $('#tipo_input').val(tipo);
+        $('#descricao_input').val(descricao);
+        $("#cartaz_input")[0].style['background-image'] = "url("+ cartaz + ")";
     }
 
 }
