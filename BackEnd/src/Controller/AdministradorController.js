@@ -11,7 +11,7 @@ module.exports = {
            // const [email_cad] = await connection('usuario').select('email').where('email',email);
             const [idUser] = await connection('usuario').select('idusuario').where('cod',cod);
             
-            console.log('ID USER'+idUser.idusuario);
+            ///console.log('ID USER'+idUser.idusuario);
             if(!idUser){
 
                 response.json({status:false});
