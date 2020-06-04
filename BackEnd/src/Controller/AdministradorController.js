@@ -1,4 +1,5 @@
 const connection = require('../database/connection');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
     async valida (request,response){
@@ -6,17 +7,19 @@ module.exports = {
         
         const cod = String(token);
         
+
+        
         try {
-            
+             // await jwt.verify(id,'chaveadm');
            // const [email_cad] = await connection('usuario').select('email').where('email',email);
             const [idUser] = await connection('usuario').select('idusuario').where('cod',cod);
             
             ///console.log('ID USER'+idUser.idusuario);
             if(!idUser){
-
+                
                 response.json({status:false});
 
-            }else if(idUser.idusuario == 1){
+            }else if(idUser.idusuario == 1 ){
                 
                 response.json({status:true});
             }

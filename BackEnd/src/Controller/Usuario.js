@@ -95,7 +95,8 @@ module.exports = {
             const a = await connection('usuario').where('idusuario','=',idUser.idusuario).update({cod:cod});
             console.log("BANCO="+a);
             //tokenJwt = jwt.sign({token:cod},'admadm',{expiresIn:86400});
-            response.json({status:true,cod:cod,adm:true});
+            const jwtAdmd = jwt.sign({id:idUser.idusuario},'chaveadm',{expiresIn:86400});
+            response.json({status:true,cod:cod,adm:true,id:jwtAdmd});
         }
         else {   
             

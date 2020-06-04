@@ -57,6 +57,7 @@ function  Login(){
                
                
                if(response.adm == true){
+                    localStorage.setItem('user',response.id); //define qual usuario é 
                    window.location.href="https://mojal.netlify.app/page/gerenciadordefilmes?token="+response.cod;
                }else{
                 localStorage.setItem('user',response.id); //define qual usuario é 
