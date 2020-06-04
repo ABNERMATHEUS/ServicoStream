@@ -122,7 +122,7 @@ var information = {
                     $("#duracao").html("  <li id='duracao'>"+"• "+ obj.duracao+"</li>");
                     $("#img-information").prop("src", obj.cartaz.replace(/"/g, ''));
                     $("#atores").html("  <li id='atores'>"+"• "+ obj.elenco+"</li>");
-                    $(temp2)[0].src = obj.link_filme ? obj.link_filme : "https://www.youtube.com/embed/KAE5ymVLmZg";
+                    $("#link_filme")[0].src = obj.link_filme ? obj.link_filme : "https://www.youtube.com/embed/KAE5ymVLmZg";
 
                 });
 
