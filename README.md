@@ -29,5 +29,10 @@
 
 #SENHA
 
-![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/senha.jpg
+![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/senha.jpg)
+
+#FAVORITOS
+
+![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/Favoritos.jpg)
+
 
