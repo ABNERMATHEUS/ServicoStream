@@ -1,37 +1,37 @@
 # Uma plataforma de streaming de filmes 
-#BACKEND - NODE.JS e JWT;
-#FRONTEND - MATERIALIZE, HTML, JAVASCRIPT, AJAX E CSS.
+<h3>BACKEND - NODE.JS e JWT;<h3/>
+<h3>FRONTEND - MATERIALIZE, HTML, JAVASCRIPT, AJAX E CSS.<h3/>
 
-#HOME
+# HOME
 
 ![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/Home.jpg)
 
 
-#DETALHES DOS FILMES
+# DETALHES DOS FILMES
 
 ![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/Filmes.jpg)
 
 
-#CADASTRO
+# CADASTRO
 
 ![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/Cadastro.jpg)
 
 
-#LOGIN
+# LOGIN
 
 ![Alt text](https://github.com/ABNERMATHEUS/ServicoStream/blob/master/img/Telas/Login.jpg)
 
 
-#SENHA
+# SENHA
 
 ![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/senha.jpg)
 
 
-#ADM
+# ADM
 
 ![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/Adm.jpg)
 
-#FAVORITOS
+# FAVORITOS
 
 ![Alt text](https://raw.githubusercontent.com/ABNERMATHEUS/ServicoStream/master/img/Telas/Favoritos.jpg)
 
