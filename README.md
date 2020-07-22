@@ -1,7 +1,7 @@
 # Uma plataforma de streaming de filmes 
 <h3>BACKEND - NODE.JS e JWT;<h3/>
 <h3>FRONTEND - MATERIALIZE, HTML, JAVASCRIPT, AJAX E CSS.<h3/>
-  <button> A</button>
+
 
 # HOME
 
